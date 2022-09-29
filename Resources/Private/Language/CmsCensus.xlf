@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:cms_census/Resources/Private/Language/CmsCensus.xlf" date="2021-10-15T10:46:28Z" product-name="cms_census">
+		<header/>
+		<body>
+			<trans-unit id="config.whatCmsApiKey" xml:space="preserve">
+				<source>API Access Key: Key to get api access on whatcms.org</source>
+			</trans-unit>
+			<trans-unit id="config.storagePID" xml:space="preserve">
+				<source>Storage PID: Enter default page pid for storing imported records.</source>
+			</trans-unit>
+			<trans-unit id="config.enableProposalWithAuth" xml:space="preserve">
+				<source>Enable Proposal with auth: Suggestions are only possible with authentication.</source>
+			</trans-unit>
+			<trans-unit id="config.loginPID" xml:space="preserve">
+				<source>Login PID: Enter default page pid for login form.</source>
+			</trans-unit>
+			<trans-unit id="config.fileadminImportFolderPath" xml:space="preserve">
+				<source>Folder Path to Import File: Enter the full folder path to the JSON file.
+					    (From path: fileadmin/)
+				</source>
+			</trans-unit>
+			<trans-unit id="config.importFileName" xml:space="preserve">
+				<source>File to Import: Enter the JSON file to import.</source>
+			</trans-unit>
+			<trans-unit id="config.importCategoryName" xml:space="preserve">
+				<source>Category to Import: Enter the category name to file import.</source>
+			</trans-unit>
+
+			<trans-unit id="proposal.headline.add">
+				<source>Add Proposal</source>
+				<target>Vorschlag hinzufügen</target>
+			</trans-unit>
+			<trans-unit id="proposal.add.button.submit-message">
+				<source>Send Proposal</source>
+				<target>Vorschlag abschicken</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

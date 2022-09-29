@@ -1,0 +1,54 @@
+.tx-cms-census {
+    background-color: #eeeeee;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 1rem;
+}
+
+.tx-cms-census-footer {
+    margin-top: 0.8rem;
+}
+ 
+/* CSS styles moved from setup.typoscript to cmscensus.css */
+textarea.f3-form-error {
+    background-color:#FF9F9F;
+    border: 1px #FF0000 solid;
+}
+
+input.f3-form-error {
+    background-color:#FF9F9F;
+    border: 1px #FF0000 solid;
+}
+
+.tx-cms-census table {
+    border-collapse:separate;
+    border-spacing:10px;
+}
+
+.tx-cms-census table th {
+    font-weight:bold;
+}
+
+.tx-cms-census table td {
+    vertical-align:top;
+    box-shadow: none;
+}
+
+ul.typo3-messages {
+    list-style: none;
+    padding: 0;
+}
+
+ul.typo3-messages .message-error {
+    color: red;
+}
+
+ul.typo3-messages .message-ok {
+    color: green;
+}
+
+h1.h1_url_headline {
+    padding-left: 5pt;
+}
+

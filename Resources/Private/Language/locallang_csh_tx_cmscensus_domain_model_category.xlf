@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:cms_census/Resources/Private/Language/locallang_csh_tx_cmscensus_domain_model_category.xlf" date="2021-10-21T10:20:09Z" product-name="cms_census">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="is_proposal.description" resname="is_proposal.description">
+				<source>isProposal</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

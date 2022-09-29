@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+
+<f:layout name="default"/>
+
+<f:section name="content">
+    <f:flashMessages/>
+
+    <script>
+        const ajaxUrl = '<f:format.raw><f:uri.action action="cmsPerCategoryUrls" pageType="1550786448" controller="Ajax" arguments="{category: category}" /></f:format.raw>';
+    </script>
+
+    <h1 class="h1_url_headline">
+        <f:translate key="tx_cmscensus_chart_url_headline"/>
+    </h1>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td class="left">
+                        <strong>
+                            <f:translate key="tx_cmscensus_chart_url_headline_category"/>
+                        </strong>
+                    </td>
+                    <td class="right"><strong>{category.name}</strong></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td class="left">
+                        <strong>
+                            <f:translate key="tx_cmscensus_chart_url_headline_countOfCategoryUrls"/>
+                        </strong>
+                    </td>
+                    <td class="right"><strong>{totalCountOfCMSUrls}</strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-sm" id="chart_table_0">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Count</th>
+                    <th>Percent</th>
+                </tr>
+                </thead>
+                <tbody>
+                <f:for each="{tableCmsCountOfCategoryUrls}" as="cmsTable">
+                    <tr class="chart-toggle-data">
+                        <td><f:format.html><span class="chart-data-color" style="background-color: {cmsTable.cmsColor}"></span>{cmsTable.cmsLabel}</f:format.html></td>
+                        <td>{cmsTable.cmsUrlsCount}</td>
+                        <td>{cmsTable.cmsUrlsPercentage}%</td>
+                    </tr>
+                </f:for>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>
+                        <f:translate key="tx_cmscensus_chart_url_totalCountOfCMSUrls"/>
+                    </th>
+                    <th>{totalCountOfCMSUrls}</th>
+                    <th>100%</th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <br/><br/>
+            <canvas id="cms-per-category-urls" style="width: 100%;"></canvas>
+        </div>
+    </div>
+
+</f:section>

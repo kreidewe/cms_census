@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:cms_census/Resources/Private/Language/locallang_csh_tx_cmscensus_domain_model_url.xlf" date="2021-10-21T10:20:09Z" product-name="cms_census">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="is_proposal.description" resname="is_proposal.description">
+				<source>isProposal</source>
+			</trans-unit>
+			<trans-unit id="only_next_auto_update.description" resname="only_next_auto_update.description">
+				<source>onlyNextAutoUpdate</source>
+			</trans-unit>
+			<trans-unit id="every_auto_update.description" resname="every_auto_update.description">
+				<source>everyAutoUpdate</source>
+			</trans-unit>
+			<trans-unit id="is_auto_update_planned.description" resname="is_auto_update_planned.description">
+				<source>isAutoUpdatePlanned</source>
+			</trans-unit>
+			<trans-unit id="categories.description" resname="categories.description">
+				<source>URL Categories</source>
+			</trans-unit>
+			<trans-unit id="whatcmstype.description" resname="whatcmstype.description">
+				<source>URL WhatCms.org Type</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

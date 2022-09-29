@@ -1,0 +1,14 @@
+plugin.tx_cmscensus_aubacmscensus {
+    view {
+        # cat=plugin.tx_cmscensus_aubacmscensus/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:cms_census/Resources/Private/Templates/
+        # cat=plugin.tx_cmscensus_aubacmscensus/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:cms_census/Resources/Private/Partials/
+        # cat=plugin.tx_cmscensus_aubacmscensus/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:cms_census/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_cmscensus_aubacmscensus//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

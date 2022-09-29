@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:cms_census/Resources/Private/Language/locallang_db.xlf" date="2021-10-21T10:20:09Z" product-name="cms_census">
+		<header/>
+		<body>
+			<trans-unit id="tx_cms_census_chartcmscensus.name" resname="tx_cms_census_chartcmscensus.name">
+				<source>CHART - CMS CENSUS</source>
+			</trans-unit>
+			<trans-unit id="tx_cms_census_chartcmscensus.description" resname="tx_cms_census_chartcmscensus.description">
+				<source>Plugin to provide whatcms.org data</source>
+			</trans-unit>
+			<trans-unit id="tx_cms_census_proposalcmscensus.name" resname="tx_cms_census_proposalcmscensus.name">
+				<source>PROPOSAL - CMS CENSUS</source>
+			</trans-unit>
+			<trans-unit id="tx_cms_census_proposalcmscensus.description" resname="tx_cms_census_proposalcmscensus.description">
+				<source>Plugin to proposal URLs and Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url" resname="tx_cmscensus_domain_model_url">
+				<source>URL</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.name" resname="tx_cmscensus_domain_model_url.name">
+				<source>URL (must start with http:// or https://)</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.description" resname="tx_cmscensus_domain_model_url.description">
+				<source>URL Description</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.is_proposal" resname="tx_cmscensus_domain_model_url.is_proposal">
+				<source>Is Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.only_next_auto_update" resname="tx_cmscensus_domain_model_url.only_next_auto_update">
+				<source>Only Next Auto Update</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.every_auto_update" resname="tx_cmscensus_domain_model_url.every_auto_update">
+				<source>Every Auto Update</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.is_auto_update_planned" resname="tx_cmscensus_domain_model_url.is_auto_update_planned">
+				<source>Is Auto Update Planned</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.categories" resname="tx_cmscensus_domain_model_url.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.whatcmstype" resname="tx_cmscensus_domain_model_url.whatcmstype">
+				<source>Whatcmstype</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category" resname="tx_cmscensus_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category.name" resname="tx_cmscensus_domain_model_category.name">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category.description" resname="tx_cmscensus_domain_model_category.description">
+				<source>Category Description</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category.is_proposal" resname="tx_cmscensus_domain_model_category.is_proposal">
+				<source>Is Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype" resname="tx_cmscensus_domain_model_whatcmstype">
+				<source>What Cms Type</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.id" resname="tx_cmscensus_domain_model_whatcmstype.id">
+				<source>Id</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.label" resname="tx_cmscensus_domain_model_whatcmstype.label">
+				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.name" resname="tx_cmscensus_domain_model_whatcmstype.name">
+				<source>Name</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

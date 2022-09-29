@@ -1,0 +1,61 @@
+plugin.tx_cmscensus_aubacmscensus {
+    view {
+        templateRootPaths.0 = EXT:cms_census/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_cmscensus_aubacmscensus.view.templateRootPath}
+        partialRootPaths.0 = EXT:cms_census/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_cmscensus_aubacmscensus.view.partialRootPath}
+        layoutRootPaths.0 = EXT:cms_census/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_cmscensus_aubacmscensus.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_cmscensus_aubacmscensus.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+
+page {
+    includeCSS {
+        cmscensus = EXT:cms_census/Resources/Public/Css/cmscensus.css
+    }
+
+    includeCSS {
+        whatcmschart = EXT:cms_census/Resources/Public/Css/whatcmschart.css
+    }
+}
+
+page {
+    includeJSFooter {
+        chart = EXT:cms_census/Resources/Public/JavaScript/chart.js
+    }
+
+    includeJSFooter {
+        cmscensus = EXT:cms_census/Resources/Public/JavaScript/cmscensus.js
+    }
+}
+
+ajax = PAGE
+ajax {
+    typeNum = 1550786448
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders {
+            10.header = Content-type: application/json
+            20.header = Cache-control: Private
+        }
+
+        admPanel = 0
+        debug = 0
+    }
+
+    10 < tt_content.list.20.cmscensus_chartcmscensus
+}
+
+

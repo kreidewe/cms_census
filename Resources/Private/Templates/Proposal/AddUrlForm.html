@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+
+<f:layout name="default"/>
+
+<f:section name="content">
+    <f:flashMessages />
+
+    <f:variable name="headline" value="{f:translate(key: 'tx_cmscensus_proposal_url_headline_add')}"/>
+    <f:variable name="submitmessage" value="{f:translate(key: 'tx_cmscensus_proposal_url_add_button_submit-message')}"/>
+
+    <f:render partial="Proposal/UrlForm"
+              arguments="{headline: headline, action: 'createUrl', submitmessage: submitmessage, url: url, categories: categories}"/>
+</f:section>

@@ -1,0 +1,49 @@
+{
+    "name": "auba/cms-census",
+    "type": "typo3-cms-extension",
+    "description": "extension to provide whatcms.org data",
+    "authors": [
+        {
+            "name": "Alexander Ullrich",
+            "role": "Developer"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11.5",
+        "cobweb/external_import": "^6.0",
+        "cobweb/svconnector_json": "^3.0"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^6.9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AUBA\\CmsCensus\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AUBA\\CmsCensus\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "typo3-ter/cms-census": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+        ]
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/public",
+            "extension-key": "cms_census"
+        }
+    }
+}

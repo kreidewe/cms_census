@@ -1,0 +1,20 @@
+# cat=basic; type=string; label=LLL:EXT:cms_census/Resources/Private/Language/CmsCensus.xlf:config.whatCmsApiKey
+whatCmsApiKey =
+
+# cat=basic; type=string; label=LLL:EXT:cms_census/Resources/Private/Language/CmsCensus.xlf:config.storagePID
+storagePID = 0
+
+# cat=login; type=boolean; label=LLL:EXT:cms_census/Resources/Private/Language/CmsCensus.xlf:config.enableProposalWithAuth
+enableProposalWithAuth = 0
+
+# cat=login; type=string; label=LLL:EXT:cms_census/Resources/Private/Language/CmsCensus.xlf:config.loginPID
+loginPID = 0
+
+# cat=fileimport; type=string; label=LLL:EXT:cms_census/Resources/Private/Language/CmsCensus.xlf:config.fileadminImportFolderPath
+fileadminImportFolderPath =
+
+# cat=fileimport; type=string; label=LLL:EXT:cms_census/Resources/Private/Language/CmsCensus.xlf:config.importFileName
+importFileName =
+
+# cat=fileimport; type=string; label=LLL:EXT:cms_census/Resources/Private/Language/CmsCensus.xlf:config.importCategoryName
+importCategoryName =

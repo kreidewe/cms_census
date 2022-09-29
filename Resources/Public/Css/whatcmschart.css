@@ -1,0 +1,35 @@
+.chart-table-wrapper {
+    max-height:500px;
+    overflow:auto
+}
+.chart-table-wrapper table {
+    margin:0
+}
+.chart-table-wrapper thead>tr {
+    position:sticky;
+    top:0
+}
+.chart-table-wrapper tfoot>tr {
+    position:sticky;
+    bottom:0
+}
+.inherit-bg * {
+    background:inherit
+}
+
+
+.chart-toggle-data {
+    cursor:auto
+}
+
+
+.chart-data-color {
+    display:inline-block;
+    height:20px;
+    width:20px;
+    margin-right:5px;
+    margin-bottom:-3px
+}
+.chart-toggle-data.chart-hidden {
+    text-decoration:line-through
+}

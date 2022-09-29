@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:cms_census/Resources/Private/Language/locallang.xlf" date="2021-10-21T10:20:09Z" product-name="cms_census">
+		<header/>
+		<body>
+			<trans-unit id="tx_cmscensus_domain_model_url" resname="tx_cmscensus_domain_model_url">
+				<source>URL</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.name" resname="tx_cmscensus_domain_model_url.name">
+				<source>URL (must start with http:// or https://)</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.description" resname="tx_cmscensus_domain_model_url.description">
+				<source>URL Description</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.is_proposal" resname="tx_cmscensus_domain_model_url.is_proposal">
+				<source>Is Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.only_next_auto_update" resname="tx_cmscensus_domain_model_url.only_next_auto_update">
+				<source>Only Next Auto Update</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.every_auto_update" resname="tx_cmscensus_domain_model_url.every_auto_update">
+				<source>Every Auto Update</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.categories" resname="tx_cmscensus_domain_model_url.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_url.whatcmstype" resname="tx_cmscensus_domain_model_url.whatcmstype">
+				<source>Whatcmstype</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category" resname="tx_cmscensus_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category.name" resname="tx_cmscensus_domain_model_category.name">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category.description" resname="tx_cmscensus_domain_model_category.description">
+				<source>Category Description</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category.is_proposal" resname="tx_cmscensus_domain_model_category.is_proposal">
+				<source>Is Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype" resname="tx_cmscensus_domain_model_whatcmstype">
+				<source>What Cms Type</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.id" resname="tx_cmscensus_domain_model_whatcmstype.id">
+				<source>Id</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.label" resname="tx_cmscensus_domain_model_whatcmstype.label">
+				<source>Label</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.name" resname="tx_cmscensus_domain_model_whatcmstype.name">
+				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="tx_cmscensus_chart_url_headline" resname="tx_cmscensus_chart_url_headline">
+				<source>Content Management Systems</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_chart_url_headline_category" resname="tx_cmscensus_chart_url_headline_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_chart_url_headline_countOfCategoryUrls" resname="tx_cmscensus_chart_url_headline_countOfCategoryUrls">
+				<source>Count of Category Urls</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_chart_url_totalCountOfCMSUrls" resname="tx_cmscensus_chart_url_totalCountOfCMSUrls">
+				<source>Total</source>
+			</trans-unit>
+
+			<trans-unit id="tx_cmscensus_proposal_url_headline_add" resname="tx_cmscensus_proposal_url_headline_add">
+				<source>Submit a new URL Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_proposal_url_add_button_submit-message" resname="tx_cmscensus_proposal_url_add_button_submit-message">
+				<source>Submit URL Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_proposal_category_new" resname="tx_cmscensus_proposal_category_new">
+				<source>Proposal a new Category</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_proposal_category_headline_add" resname="tx_cmscensus_proposal_category_headline_add">
+				<source>Submit a new Category Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_proposal_category_add_button_submit-message" resname="tx_cmscensus_proposal_category_add_button_submit-message">
+				<source>Submit Category Proposal</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_proposal_url_new" resname="tx_cmscensus_proposal_url_new">
+				<source>Proposal a new Url</source>
+			</trans-unit>
+
+			<trans-unit id="tx_cmscensus_flashmessage_proposal-error.url" resname="tx_cmscensus_flashmessage_proposal-error.url">
+				<source>The URL is not valid!</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_flashmessage_proposal-created.headline" resname="tx_cmscensus_flashmessage_proposal-created.headline">
+				<source>Proposal submitted</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_flashmessage_proposal-created.body" resname="tx_cmscensus_flashmessage_proposal-created.body">
+				<source>The Proposal was submitted successfully. Thank You!</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_flashmessage_proposal-warning-exist.category" resname="tx_cmscensus_flashmessage_proposal-warning-exist.category">
+				<source>The Category already exists!</source>
+			</trans-unit>
+
+			<trans-unit id="tx_cmscensus_category_urls_controller_notYetQueriedMessage" resname="tx_cmscensus_category_urls_controller_notYetQueriedMessage">
+				<source>Not Yet Queried</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

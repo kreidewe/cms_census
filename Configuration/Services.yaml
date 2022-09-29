@@ -1,0 +1,18 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  AUBA\CmsCensus\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  AUBA\CmsCensus\CmsStatistics\CategoryUrls:
+    public: true
+
+  AUBA\CmsCensus\Step\CustomizeFileImportSetupStep:
+    public: true
+
+  AUBA\CmsCensus\Step\CustomizeReferenceUIDMappingStep:
+    public: true
