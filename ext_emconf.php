@@ -2,11 +2,11 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'CMS Census Extension',
-    'description' => 'extension to provide whatcms.org data',
+    'description' => 'Extension to draw market share of content management systems on https://cmscensus.eu/, detected by whatcms.org.',
     'category' => 'plugin',
-    'author' => 'Alexander Ullrich',
-    'author_email' => 'alexander.ullrich@digitaler-mittelstand-dresden.de',
-    'state' => 'alpha',
+    'author' => 'NITSAN, Alexander Ullrich, Sebastian Kreideweiß',
+    'author_email' => 'sebastian@kreideweiss.info',
+    'state' => 'stable',
     'clearCacheOnLoad' => 0,
     'version' => '1.0.0',
     'constraints' => [
