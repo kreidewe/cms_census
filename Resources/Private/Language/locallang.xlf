@@ -100,6 +100,12 @@
 			<trans-unit id="tx_cmscensus_category_urls_controller_notYetQueriedMessage" resname="tx_cmscensus_category_urls_controller_notYetQueriedMessage">
 				<source>Not Yet Queried</source>
 			</trans-unit>
+			<trans-unit id="domain" resname="domain">
+				<source>Domain Name</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_chart_url_list" resname="tx_cmscensus_chart_url_list">
+				<source>List View Search Form</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

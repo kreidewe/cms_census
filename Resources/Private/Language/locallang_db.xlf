@@ -66,6 +66,9 @@
 			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.name" resname="tx_cmscensus_domain_model_whatcmstype.name">
 				<source>Name</source>
 			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_category.enableList" resname="tx_cmscensus_domain_model_category.enableList">
+				<source>Enable List View</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

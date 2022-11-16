@@ -83,3 +83,28 @@
     </div>
 
 </f:section>
+
+<f:section name="listContent">
+    <f:if condition="{settings.enableList} == 1">
+        <f:then>
+            <div class="row">
+                <div class="col-md-12">
+                    <f:form action="search" id="cmsSearch" name="cmsSearch">
+                        <div class="form-group">
+                            <label for="domain">
+                                <f:translate key="domain"/>
+                            </label>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <f:form.textfield name="domain" id="domain" class="form-control" additionalAttributes="{minlength:'2'}" required="required" />
+                                </div>
+                            </div>
+                        </div>
+                        <f:form.submit value="search" class="btn btn-success"/>
+                    </f:form>
+                </div>
+            </div>
+            <div id="ajaxResult"></div>
+        </f:then>
+    </f:if>    
+</f:section>

@@ -15,12 +15,12 @@ defined('TYPO3') or die();
         'CmsCensus',
         'Chartcmscensus',
         [
-            ChartController::class => 'show',
+            ChartController::class => 'show, search',
             AjaxController::class => 'cmsPerCategoryUrls'
         ],
         // non-cacheable actions
         [
-            ChartController::class => 'show',
+            ChartController::class => 'show, search',
             AjaxController::class => 'cmsPerCategoryUrls'
         ]
     );
