@@ -52,3 +52,38 @@ h1.h1_url_headline {
     padding-left: 5pt;
 }
 
+/* Version Css */
+.columnSort{
+    cursor: pointer;
+}
+
+.title {
+    color: #363636;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+}
+.title.is-4 {
+    font-size: 1.5rem;
+}
+.content ul {
+    list-style: disc outside;
+    margin-left: 2em;
+    margin-top: 1em;
+}
+li a {
+    color: #f49700;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: larger;
+}
+  
+li a:hover {
+    color: #a86800;
+}
+  .chart-container {
+    position: relative;
+    margin: auto;
+    height: 80vh;
+    width: 80vw;
+  }

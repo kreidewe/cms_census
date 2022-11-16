@@ -11,4 +11,8 @@ return [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         'source' => 'EXT:cms_census/Resources/Public/Icons/user_plugin_aubacmscensus.svg'
     ],
+    'cms_census-plugin-versionscmscensus' => [
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        'source' => 'EXT:cms_census/Resources/Public/Icons/user_plugin_aubacmscensus.svg'
+    ],
 ];

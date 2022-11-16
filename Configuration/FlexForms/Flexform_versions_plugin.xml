@@ -1,0 +1,36 @@
+<T3DataStructure>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <!-- Sheet: Additional -->
+        <additional>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>
+                        LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cmscensus_domain_model_versions.name
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.enableStaticChart>
+                        <TCEforms>
+                            <label>LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cmscensus_domain_model_versions.enableStaticChart</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.enableStaticChart>
+                    <settings.enableStaticList>
+                        <TCEforms>
+                            <label>LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cmscensus_domain_model_versions.enableStaticList</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.enableStaticList>
+                </el>
+            </ROOT>
+        </additional>
+    </sheets>
+</T3DataStructure>

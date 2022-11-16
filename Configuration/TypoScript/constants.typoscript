@@ -12,3 +12,10 @@ plugin.tx_cmscensus_aubacmscensus {
         storagePid =
     }
 }
+
+plugin.tx_cmscensus_versionscmscensus {
+    #cat=tx_cmscensus_versionscmscensus/35_helpdesk_googleCaptcha/10; type=string; label = User Name
+    username =
+    #cat=tx_cmscensus_versionscmscensus/35_helpdesk_googleCaptcha/20; type=string; label = Password
+    password =
+}

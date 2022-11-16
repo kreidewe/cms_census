@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+      lang="en">
+
+<f:if condition="{settings.enableStaticChart} == 1">
+    <f:then>
+        <f:form.hidden name="versionLabel" id="versionLabel" value="{label}" />
+        <f:form.hidden name="versionDataset" id="versionDataset" value="{dataset}" />
+        <h3 class="title is-4">TYPO3 versions analyzed</h3>
+        <div class="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+    </f:then>
+</f:if>
+<f:if condition="{settings.enableStaticList} == 1">
+    <f:then>
+        <f:form.hidden name="versionListLabel" id="versionListLabel" value="{label}" />
+        <f:form.hidden name="versionListDataset" id="versionListDataset" value="{dataset}" />
+        <div class="column">
+            <h3 class="title is-4">TYPO3 Major Version Statistics</h3>
+            <div class="content">
+                <ul class="align-center main">
+                <f:for each="{listResult}" as="list">
+                    <li>
+                        <a class="listUrl" href="{f:uri.action(action:'show', arguments:{listId: list.id})}"><f:format.date format="M d,Y, h:m A">{list.date}</f:format.date></a>
+                    </li>
+                </f:for>
+                </ul>
+            </div>
+        </div>
+        <div class="chart-container" id="graph-container" style="display: none;">
+            <canvas id="chartList"></canvas>
+        </div>
+    </f:then>
+</f:if>

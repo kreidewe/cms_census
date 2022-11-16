@@ -66,6 +66,18 @@
 			<trans-unit id="tx_cmscensus_domain_model_whatcmstype.name" resname="tx_cmscensus_domain_model_whatcmstype.name">
 				<source>Name</source>
 			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_versions" resname="tx_cmscensus_domain_model_versions">
+				<source>Versions</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_versions.name" resname="tx_cmscensus_domain_model_versions.name">
+				<source>Versions</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_versions.enableStaticChart" resname="tx_cmscensus_domain_model_versions.enableStaticChart">
+				<source>Enable Static Chart</source>
+			</trans-unit>
+			<trans-unit id="tx_cmscensus_domain_model_versions.enableStaticList" resname="tx_cmscensus_domain_model_versions.enableStaticList">
+				<source>Enable Static List</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
