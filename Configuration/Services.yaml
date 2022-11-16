@@ -16,3 +16,7 @@ services:
 
   AUBA\CmsCensus\Step\CustomizeReferenceUIDMappingStep:
     public: true
+
+  AUBA\CmsCensus\Command\UrlSchedulerRunCommand:
+    tags:
+      - { name: 'console.command', command: 'cmscensus:scheduler', description: 'Cms Census' }
