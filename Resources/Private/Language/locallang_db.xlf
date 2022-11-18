@@ -24,6 +24,12 @@
 			<trans-unit id="tx_cmscensus_domain_model_url.description" resname="tx_cmscensus_domain_model_url.description">
 				<source>URL Description</source>
 			</trans-unit>
+			<trans-unit id="tx_cms_census_versionscmscensus.name" resname="tx_cms_census_versionscmscensus.name">
+				<source>TYPO3 versions analyzed</source>
+			</trans-unit>
+			<trans-unit id="tx_cms_census_versionscmscensus.description" resname="tx_cms_census_versionscmscensus.description">
+				<source>Plugin to fetch Version Graph of TYPO3</source>
+			</trans-unit>
 			<trans-unit id="tx_cmscensus_domain_model_url.is_proposal" resname="tx_cmscensus_domain_model_url.is_proposal">
 				<source>Is Proposal</source>
 			</trans-unit>

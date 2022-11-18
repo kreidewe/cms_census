@@ -96,7 +96,7 @@ class VersionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
                     $token = $this->versionsRepository->saveToken($response,$token);
                 }
             } else {
-                echo "Please add User name and Password !";
+                echo "Please add Id and password in Constant editor only then graph/Chart will show";
                 die;
             }
         }
