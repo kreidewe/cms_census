@@ -10,6 +10,7 @@ $(document).ready(
                 const filterForm = document.getElementById("cmsSearch");
                 var data = new FormData(filterForm);
                 var url = filterForm.getAttribute("action");
+                const urlParams = new URLSearchParams(url);
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", url);
                 xhr.onreadystatechange = function (data) {
@@ -18,33 +19,15 @@ $(document).ready(
                         var xmlDoc = parser.parseFromString(xhr.responseText, "text/html");
                         document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;  
 
-                        document.getElementById('urlasc').addEventListener("click", function (e) {                      
-                            loadMore(this.getAttribute("href"),'urlasc','urldesc');
-                            e.preventDefault();
-                        });
-                        document.getElementById('urldesc').addEventListener("click", function (e) {
-                            loadMore(this.getAttribute("href"),'urldesc','urlasc');
-                            e.preventDefault();
-                        });
-
-                        document.getElementById('cmsasc').addEventListener("click", function (e) {                      
-                            loadMore(this.getAttribute("href"),'cmsasc','cmsdesc');
-                            e.preventDefault();
-                        });
-                        document.getElementById('cmsdesc').addEventListener("click", function (e) {
-                            loadMore(this.getAttribute("href"),'cmsdesc','cmsasc');
-                            e.preventDefault();
-                        });
-
-                        document.getElementById('luasc').addEventListener("click", function (e) {                      
-                            loadMore(this.getAttribute("href"),'luasc','ludesc');
-                            e.preventDefault();
-                        });
-                        document.getElementById('ludesc').addEventListener("click", function (e) {
-                            loadMore(this.getAttribute("href"),'ludesc','luasc');
-                            e.preventDefault();
-                        });
-                        
+                        var columnSort = document.getElementsByClassName('columnSort');
+                        if(columnSort.length > 0) {
+                            for (let i = 0; i < columnSort.length; i++) {
+                            columnSort[i].addEventListener("click", function (e) {
+                                loadMore(this.getAttribute("href"),this.getAttribute('id'),this.dataset.show);
+                                e.preventDefault();
+                            });
+                            }
+                        }
                         var pagination = document.getElementsByClassName('article-load-more');
                         if(pagination.length > 0) {
                             for (let i = 0; i < pagination.length; i++) {
@@ -64,6 +47,9 @@ $(document).ready(
             // document.getElementById(hide).style.display = 'none';
             const filterForm = document.getElementById("cmsSearch");
             var data = new FormData(filterForm);
+            const urlParams = new URLSearchParams(url);
+            data.append('sortby',urlParams.get('tx_cmscensus_chartcmscensus[sortby]'));
+            data.append('formate',urlParams.get('tx_cmscensus_chartcmscensus[formate]'));
             let xhr = new XMLHttpRequest();
             xhr.open("POST", url);
             
@@ -72,34 +58,16 @@ $(document).ready(
                 var parser = new DOMParser();
                 var xmlDoc = parser.parseFromString(xhr.responseText, "text/html");
                 document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;  
-                
-                
-                document.getElementById('urlasc').addEventListener("click", function (e) {
-                    loadMore(this.getAttribute("href"),'urlasc','urldesc');
-                    e.preventDefault();
-                });
-                document.getElementById('urldesc').addEventListener("click", function (e) {
-                    loadMore(this.getAttribute("href"),'urldesc','urlasc');
-                    e.preventDefault();
-                });
 
-                document.getElementById('cmsasc').addEventListener("click", function (e) {                      
-                    loadMore(this.getAttribute("href"),'cmsasc','cmsdesc');
-                    e.preventDefault();
-                });
-                document.getElementById('cmsdesc').addEventListener("click", function (e) {
-                    loadMore(this.getAttribute("href"),'cmsdesc','cmsasc');
-                    e.preventDefault();
-                });
-
-                document.getElementById('luasc').addEventListener("click", function (e) {                      
-                    loadMore(this.getAttribute("href"),'luasc','ludesc');
-                    e.preventDefault();
-                });
-                document.getElementById('ludesc').addEventListener("click", function (e) {
-                    loadMore(this.getAttribute("href"),'ludesc','luasc');
-                    e.preventDefault();
-                });
+                var columnSort = document.getElementsByClassName('columnSort');
+                if(columnSort.length > 0) {
+                    for (let i = 0; i < columnSort.length; i++) {
+                    columnSort[i].addEventListener("click", function (e) {
+                        loadMore(this.getAttribute("href"),this.getAttribute('id'),this.dataset.show);
+                        e.preventDefault();
+                    });
+                    }
+                }
                 
                 var pagination = document.getElementsByClassName('article-load-more');
                 if(pagination.length > 0) {

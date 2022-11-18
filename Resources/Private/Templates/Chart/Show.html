@@ -85,11 +85,11 @@
 </f:section>
 
 <f:section name="listContent">
-    <f:if condition="{settings.enableList} == 1">
+    <f:if condition="{settings.enableList}">
         <f:then>
             <div class="row">
                 <div class="col-md-12">
-                    <f:form action="search" id="cmsSearch" name="cmsSearch">
+                    <f:form action="search" id="cmsSearch" name="cmsSearch" pageType="1550786448">
                         <div class="form-group">
                             <label for="domain">
                                 <f:translate key="domain"/>
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                         </div>
-                        <f:form.submit value="search" class="btn btn-success"/>
+                        <f:form.submit value="{f:translate(key:'search')}" class="btn btn-success"/>
                     </f:form>
                 </div>
             </div>

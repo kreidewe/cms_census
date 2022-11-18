@@ -37,32 +37,7 @@ defined('TYPO3') or die();
         ]
     );
 
-    // wizards
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        'mod {
-            wizards.newContentElement.wizardItems.plugins {
-                elements {
-                    chartcmscensus {
-                        iconIdentifier = cms_census-plugin-chartcmscensus
-                        title = LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cms_census_chartcmscensus.name
-                        description = LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cms_census_chartcmscensus.description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = cmscensus_chartcmscensus
-                        }
-                    },
-                    proposalcmscensus {
-                        iconIdentifier = cms_census-plugin-proposalcmscensus
-                        title = LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cms_census_proposalcmscensus.name
-                        description = LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cms_census_proposalcmscensus.description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = cmscensus_proposalcmscensus
-                        }
-                    }
-                }
-                show = *
-            }
-       }'
+        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:cms_census/Configuration/TSconfig/ContentElementWizard.tsconfig">'
     );
 })();

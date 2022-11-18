@@ -83,24 +83,25 @@ class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $currentPage = 1;
         $searchData = GeneralUtility::_GP('tx_cmscensus_chartcmscensus');
+        $sortBy = GeneralUtility::_GP('sortby');
+        $sort = GeneralUtility::_GP('formate');
         if($searchData['domain']) {
-            $GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['sortby'] = isset($GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['sortby']) ? $GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['sortby'] : null;
-            $GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['formate'] = isset($GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['formate']) ? $GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['formate'] : null;
-            $searchResult = $this->urlRepository->fetchSearchResult($searchData, $GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['sortby'],$GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['formate']);
+            $sortBy=='null' ? $sortBy = null : $sortBy;
+            $sort=='null' ? $sort = null : $sortBy;
+            $searchResult = $this->urlRepository->fetchSearchResult($searchData, $sortBy,$sort);
         }
-        debug($GLOBALS['_GET']['tx_cmscensus_chartcmscensus']);
+
         if(!empty($GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['currentPage']))
         {
             $currentPage = (int)$GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['currentPage'];
         }
         $arrayPaginator = new ArrayPaginator($searchResult, $currentPage, 10);
         $pagination = new SimplePagination($arrayPaginator);
-        debug($pagination);
         $this->view->assignMultiple(
             [
                 'searchData' => $searchData,
-                'sortby' => $GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['sortby'],
-                'formate' => $GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['formate'],
+                'sortby' => $sortBy,
+                'formate' => $sort,
                 'paginatedItems' => $arrayPaginator->getPaginatedItems(),
                 'pages' => $pagination->getLastPageNumber(),
                 'searchResult' => $searchResult,

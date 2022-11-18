@@ -25,10 +25,10 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
     public function fetchSearchResult($searchData,$sort,$formate){
-        $query = $this->createQuery();
+
         if($searchData['domain']){
-            $sort = isset($sort) ? $sort : 'uid';
-            $formate = isset($formate) ? $formate : 'ASC';
+            $sort = $sort ? $sort : 'uid';
+            $formate = $formate ? $formate : 'ASC';
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
             $queryBuilder
             ->select('*')
