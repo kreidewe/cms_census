@@ -118,6 +118,9 @@
 			<trans-unit id="t3secure">
 				<source>t3secure.de</source>
 			</trans-unit>
+			<trans-unit id="norecords">
+				<source>Records not found</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
