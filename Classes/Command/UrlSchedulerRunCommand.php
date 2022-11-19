@@ -36,6 +36,12 @@ class UrlSchedulerRunCommand extends Command
                 InputArgument::REQUIRED,
                 'Add number of URLs check per Run'
             );
+        $this
+            ->addArgument(
+                'sysfolderID',
+                InputArgument::REQUIRED,
+                'Sysfolder ID'
+            );
     }
     /**
      * Initializes the command after the input has been bound and before the input is validated.
@@ -48,7 +54,8 @@ class UrlSchedulerRunCommand extends Command
         $io = new SymfonyStyle($input, $output);
         $io->title($this->getDescription());
         $argumentPerCron = $input->getArgument('argumentPerCron');
-        $searchResult = $this->urlRepository->fetchUrls($argumentPerCron);
+        $sysfolderID = $input->getArgument('sysfolderID');
+        $searchResult = $this->urlRepository->fetchUrls($argumentPerCron,$sysfolderID);
         $apiRequest = GeneralUtility::makeInstance(RequestFactory::class);
 
         foreach($searchResult as $url){
@@ -71,7 +78,7 @@ class UrlSchedulerRunCommand extends Command
             $this->urlRepository->updateStatus((int)$url['uid'],(int)$status);
             $uid = (int)$url['uid'];
         }
-        $this->urlRepository->updateFlag($uid);
+        $this->urlRepository->updateFlag($uid,$sysfolderID);
 
         return COMMAND::SUCCESS;
     }

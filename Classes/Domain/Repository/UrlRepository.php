@@ -21,7 +21,7 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
  */
 class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    public function fetchUrls($argumentPerCron){
+    public function fetchUrls($argumentPerCron,$sysfolderID){
         
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
         $flag = $queryBuilder->select('uid')
@@ -46,6 +46,9 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             ->where(
                 $queryBuilder->expr()->gt('uid', $queryBuilder->createNamedParameter((int)$flag['uid'], \PDO::PARAM_INT))
             )
+            ->andWhere(
+                $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter((int)$sysfolderID, \PDO::PARAM_INT))
+            )
             ->setMaxResults((int)$argumentPerCron)
             ->execute();
         
@@ -69,9 +72,19 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return;
     }
 
-    public function updateFlag($uid){
+    public function updateFlag($uid,$sysfolderID){
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
-        $queryBuilder
+        
+        $lastUid = $queryBuilder->select('uid')
+            ->from('tx_cmscensus_domain_model_url')
+            ->where(
+                $queryBuilder->expr()->eq('pid', $queryBuilder->createNamedParameter((int)$sysfolderID, \PDO::PARAM_INT))
+            )
+            ->addOrderBy('uid', 'DESC')
+            ->execute()
+            ->fetchOne();
+        if((int)$lastUid != (int)$uid){
+            $queryBuilder
             ->update('tx_cmscensus_domain_model_url')
             ->where(
                 $queryBuilder->expr()->eq('checkflag', $queryBuilder->createNamedParameter(1, \PDO::PARAM_INT))
@@ -79,13 +92,22 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             ->set('checkflag', 0)
             ->execute();
 
-        $queryBuilder
+            $queryBuilder
+                ->update('tx_cmscensus_domain_model_url')
+                ->where(
+                    $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT))
+                )
+                ->set('checkflag', 1)
+                ->execute();
+        } else {
+            $queryBuilder
             ->update('tx_cmscensus_domain_model_url')
             ->where(
-                $queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT))
+                $queryBuilder->expr()->eq('checkflag', $queryBuilder->createNamedParameter(1, \PDO::PARAM_INT))
             )
-            ->set('checkflag', 1)
+            ->set('checkflag', 0)
             ->execute();
-        return;
+        }
+        return;        
     }
 }
