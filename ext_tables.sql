@@ -23,3 +23,10 @@ CREATE TABLE tx_cmscensus_domain_model_whatcmstype
     label varchar(255) NOT NULL DEFAULT '',
     name  varchar(255) NOT NULL DEFAULT ''
 );
+
+CREATE TABLE tx_cmscensus_domain_model_versions
+(
+    id    int(11) NOT NULL DEFAULT '0',
+    token varchar(255) NOT NULL DEFAULT '',
+    expirey  varchar(255) NOT NULL DEFAULT ''
+);

@@ -21,6 +21,13 @@ plugin.tx_cmscensus_aubacmscensus {
     }
 }
 
+plugin.tx_cmscensus_versionscmscensus {
+    #cat=tx_cmscensus_versionscmscensus/35_helpdesk_googleCaptcha/10; type=string; label = User Name
+    username = {$plugin.tx_cmscensus_versionscmscensus.username}
+    #cat=tx_cmscensus_versionscmscensus/35_helpdesk_googleCaptcha/20; type=string; label = Password
+    password = {$plugin.tx_cmscensus_versionscmscensus.password}
+}
+
 page {
     includeCSS {
         cmscensus = EXT:cms_census/Resources/Public/Css/cmscensus.css

@@ -7,6 +7,7 @@ use AUBA\CmsCensus\Controller\CategoryController;
 use AUBA\CmsCensus\Controller\ChartController;
 use AUBA\CmsCensus\Controller\ProposalController;
 use AUBA\CmsCensus\Controller\UrlController;
+use AUBA\CmsCensus\Controller\VersionController;
 
 defined('TYPO3') or die();
 
@@ -37,6 +38,18 @@ defined('TYPO3') or die();
         ]
     );
 
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'CmsCensus',
+        'Versionscmscensus',
+        [
+            VersionController::class => 'show'
+        ],
+        // non-cacheable actions
+        [
+            VersionController::class => 'show'
+        ]
+    );
+
     // wizards
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         'mod {
@@ -59,7 +72,16 @@ defined('TYPO3') or die();
                             CType = list
                             list_type = cmscensus_proposalcmscensus
                         }
-                    }
+                    },
+                    versionscmscensus {
+                        iconIdentifier = cms_census-plugin-versionscmscensus
+                        title = LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cms_census_versionscmscensus.name
+                        description = LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cms_census_versionscmscensus.description
+                        tt_content_defValues {
+                            CType = list
+                            list_type = cmscensus_versionscmscensus
+                        }
+                    },
                 }
                 show = *
             }

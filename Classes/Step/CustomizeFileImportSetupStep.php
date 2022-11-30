@@ -21,7 +21,6 @@ class CustomizeFileImportSetupStep extends AbstractStep
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
-     * @inject
      */
     protected $persistenceManager;
 
