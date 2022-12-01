@@ -28,6 +28,14 @@
                             </config>
                         </TCEforms>
                     </settings.categoryUid>
+                    <settings.enableList>
+                        <TCEforms>
+                            <label>LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cmscensus_domain_model_category.enableList</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.enableList>
                 </el>
             </ROOT>
         </additional>

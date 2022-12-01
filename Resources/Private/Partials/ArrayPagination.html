@@ -1,0 +1,60 @@
+<div class="pagination-block pagination-block--{positionClass}">
+    <div id="cover-spin"></div>
+    <f:if condition="{pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+        <ul class="ns-pagination dflex">
+            <f:if condition="{pagination.previousPageNumber}">
+                <li class="prev">
+                    <f:if condition="{pagination.previousPageNumber} > 1">
+                        <f:then>
+                            <a href="{f:uri.action(action:'search', arguments:{currentPage: pagination.previousPageNumber, sortby: sortby , formate: formate})}" title="{f:translate(key:'pagination.previous')}" class="article-load-more">
+                                <span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/left.png" /></span>
+                            </a>
+                        </f:then>
+                        <f:else>
+                            <a href="{f:uri.action(action:'search', arguments:{currentPage: pagination.previousPageNumber, sortby: sortby , formate: formate})}" title="{f:translate(key:'pagination.previous')}" class="article-load-more">
+                                <span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/left.png" /></span>
+                            </a>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:if>
+            <f:if condition="{pagination.displayRangeStart} > 1">
+                <li class="first">
+                    <a href="{f:uri.action(action:'search', arguments:{currentPage: page, sortby: sortby , formate: formate})}" class="article-load-more">1</a>
+                </li>
+            </f:if>
+            <f:if condition="{pagination.hasLessPages}">
+                <li>…</li>
+            </f:if>
+            <f:if condition="<f:count>{pagination.allPageNumbers}</f:count> > 1">
+                <f:for each="{pagination.allPageNumbers}" as="page">
+                    <li class="{f:if(condition: '{paginator.currentPageNumber} == {page}', then: 'current active', else: '')}">
+                        <f:if condition="{page} > 1">
+                        <f:then>
+                            <a href="{f:uri.action(action:'search', arguments:{currentPage: page, sortby: sortby , formate: formate})}" class="article-load-more ">{page}</a>
+                        </f:then>
+                        <f:else>
+                            <a href="{f:uri.action(action:'search', arguments:{currentPage: page, sortby: sortby , formate: formate})}" class="article-load-more">{page}</a>
+                        </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </f:if>
+            <f:if condition="{pagination.hasMorePages}">
+                <li class="">…</li>
+            </f:if>
+            <f:if condition="{pagination.displayRangeEnd} < {pagination.numberOfPages}">
+                <li class="last">
+                    <a href="{f:uri.action(action:'search', arguments:{currentPage: pagination.lastPageNumber, sortby: sortby , formate: formate})}" class="article-load-more">{paginator.numberOfPages}</a>
+                </li>
+            </f:if>
+            <f:if condition="{pagination.nextPageNumber}">
+                <li class="next">
+                    <a href="{f:uri.action(action:'search', arguments:{currentPage: pagination.nextPageNumber, sortby: sortby , formate: formate})}" title="{f:translate(key:'pagination.next')}" class="article-load-more">
+                        <span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/right.png" /></span>							
+                    </a>
+                </li>
+            </f:if>
+        </ul>
+    </f:if>
+</div>

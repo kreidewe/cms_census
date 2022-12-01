@@ -52,6 +52,103 @@ h1.h1_url_headline {
     padding-left: 5pt;
 }
 
+.pagination-block .ns-pagination li{
+    list-style: none;
+}
+
+.pagination-block .ns-pagination li:before,
+.pagination-block .ns-pagination li:after {
+    display:none !important;
+}
+
+.pagination-block {
+    position: relative;
+    width:100%;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.pagination-block--center {
+    text-align: center;
+}
+.pagination-block--center .ns-pagination {
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+}
+
+.dflex, .cus-row {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.ns-pagination {
+    margin: 20px 0;
+    padding: 0;
+}
+.ns-pagination li:not(:last-child) {
+    margin-right: 4px;
+}
+.ns-pagination li.active,
+.ns-pagination li:hover {
+    background-color: #343a40;
+    color: #fff;
+}
+.ns-pagination li,
+.ns-pagination li a{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+}
+.ns-pagination li,
+.GITheWall .ns-pagination li {
+    width: 30px;
+    padding: 0;
+}
+.GITheWall .ns-pagination li {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.ns-pagination li  {
+    position: relative;
+    text-align: center;
+    list-style: none;
+    border: 1px solid #343a40;
+    color: #343a40;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    font-weight: 600;
+}
+.ns-pagination li a{
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 0;
+    width:100%;
+    height: 100%;
+}
+.pagination-block--center {
+    text-align: center;
+}
+.pagination-block--center .ns-pagination {
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+}
+.up_down_icon{
+    height: 15px;
+    width: 15px;
+    float: right;
+}
+
 /* Version Css */
 .columnSort{
     cursor: pointer;

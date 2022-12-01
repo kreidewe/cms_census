@@ -1,0 +1,43 @@
+<div class="row" id="ajaxData">
+    <div class="col-md-12">
+        <f:if condition="{paginatedItems}">
+            <f:then>
+                <table class="table table-sm" id="searchResultTable">
+                    <thead>
+                    <tr>
+                        <th id="urlasc" data-show="urldesc" class="columnSort" href={f:uri.action(action:'search', arguments:{sortby: 'name', formate: 'ASC', searchData: searchData})}>URL<span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/up.png" /></span></th>
+                        <th id="urldesc" data-show="urlasc" class="columnSort" href={f:uri.action(action:'search', arguments:{sortby: 'name', formate: 'DESC', searchData: searchData})} style="display:none;">URL<span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/down.png" /></span></th>
+                        <th id="cmsasc" data-show="cmsdesc" class="columnSort" href={f:uri.action(action:'search', arguments:{sortby: 'whatcmstype', formate: 'ASC', searchData: searchData})}>CMS<span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/up.png" /></span></th>
+                        <th id="cmsdesc" data-show="cmsasc" class="columnSort" href={f:uri.action(action:'search', arguments:{sortby: 'whatcmstype', formate: 'DESC', searchData: searchData})} style="display:none;">CMS<span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/down.png" /></span></th>
+                        <th id="luasc" data-show="ludesc" class="columnSort" href={f:uri.action(action:'search', arguments:{sortby: 'tstamp', formate: 'ASC', searchData: searchData})}>Last Update<span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/up.png" /></span></th>
+                        <th id="ludesc" data-show="luasc" class="columnSort" href={f:uri.action(action:'search', arguments:{sortby: 'tstamp', formate: 'DESC', searchData: searchData})} style="display:none;">Last Update<span><f:image class="up_down_icon" src="EXT:cms_census/Resources/Public/Icons/down.png" /></span></th>
+                        <th>More Options</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <f:for each="{paginatedItems}" as="cmsTable">
+                        <tr class="chart-toggle-data">
+                            <td>{cmsTable.name}</td>
+                            <td>{cmsTable.whatcmstype}</td>
+                            <td><f:format.date format="Y-m-d">{cmsTable.tstamp}</f:format.date></td>
+                            <td><a href="https://whatcms.org/?s={cmsTable.name}" target="_blank">{f:translate(key:'cmstype')}</a></td>
+                            <td><a href="https://{cmsTable.name}" target="_blank">{f:translate(key:'visit')}</a></td>
+                            <td>{f:if(condition: '{cmsTable.whatcmstype} == TYPO3', then: '<a href=" https://t3secure.de/typo3-schwachstellen-scan" target="_blank">t3secure.de</a>')}</td>
+                        </tr>
+                    </f:for>
+                    </tbody>
+                </table>
+                <f:render partial="ArrayPagination" arguments="{_all}" />
+            </f:then>
+            <f:else>
+                <div>
+                    {f:translate(key:'norecords')}
+                </div>
+            </f:else>
+        </f:if>
+        
+    </div>
+    
+</div>

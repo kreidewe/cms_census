@@ -55,6 +55,89 @@ $(document).ready(
             }
         }
 
+        if(document.getElementById('cmsSearch')){
+            document.getElementById('cmsSearch').addEventListener('submit', function(evt){
+                // let formData = new FormData(this);
+                const filterForm = document.getElementById("cmsSearch");
+                var data = new FormData(filterForm);
+                var url = filterForm.getAttribute("action");
+                const urlParams = new URLSearchParams(url);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", url);
+                xhr.onreadystatechange = function (data) {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var parser = new DOMParser();
+                        var xmlDoc = parser.parseFromString(xhr.responseText, "text/html");
+                        document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;  
+
+                        var columnSort = document.getElementsByClassName('columnSort');
+                        if(columnSort.length > 0) {
+                            for (let i = 0; i < columnSort.length; i++) {
+                            columnSort[i].addEventListener("click", function (e) {
+                                loadMore(this.getAttribute("href"),this.getAttribute('id'),this.dataset.show);
+                                e.preventDefault();
+                            });
+                            }
+                        }
+                        var pagination = document.getElementsByClassName('article-load-more');
+                        if(pagination.length > 0) {
+                            for (let i = 0; i < pagination.length; i++) {
+                            pagination[i].addEventListener("click", function (e) {
+                                loadMore(this.getAttribute("href"),null,null);
+                                e.preventDefault();
+                            });
+                            }
+                        }
+                    }
+                };
+                xhr.send(data);
+                evt.preventDefault();
+            });
+        }
+        function loadMore(url,hide,show) {
+            // document.getElementById(hide).style.display = 'none';
+            const filterForm = document.getElementById("cmsSearch");
+            var data = new FormData(filterForm);
+            const urlParams = new URLSearchParams(url);
+            data.append('sortby',urlParams.get('tx_cmscensus_chartcmscensus[sortby]'));
+            data.append('formate',urlParams.get('tx_cmscensus_chartcmscensus[formate]'));
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", url);
+            
+            xhr.onreadystatechange = function (data) {
+              if (this.readyState == 4 && this.status == 200) {
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xhr.responseText, "text/html");
+                document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;  
+
+                var columnSort = document.getElementsByClassName('columnSort');
+                if(columnSort.length > 0) {
+                    for (let i = 0; i < columnSort.length; i++) {
+                    columnSort[i].addEventListener("click", function (e) {
+                        loadMore(this.getAttribute("href"),this.getAttribute('id'),this.dataset.show);
+                        e.preventDefault();
+                    });
+                    }
+                }
+                
+                var pagination = document.getElementsByClassName('article-load-more');
+                if(pagination.length > 0) {
+                    for (let i = 0; i < pagination.length; i++) {
+                        pagination[i].addEventListener("click", function (e) {
+                            loadMore(this.getAttribute("href"),hide,show);
+                            e.preventDefault();
+                        });
+                    }
+                }
+                if(hide){
+                    document.getElementById(hide).style.display = 'none';
+                    document.getElementById(show).style.display = 'block';
+                }
+              }
+            };
+            xhr.send(data);
+          }
+
         var Module = {};
 
         // Initialize

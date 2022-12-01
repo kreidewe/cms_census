@@ -5,6 +5,14 @@
 <div class="tx-cms-census">
     <f:render section="content"/>
 </div>
+<f:if condition="{settings.enableList}">
+    <f:then>
+        <h2 class="element-header "><span><f:translate key="tx_cmscensus_chart_url_list"/></span></h2>
+        <div class="tx-cms-census">
+            <f:render section="listContent"/>
+        </div>
+    </f:then>
+</f:if>
 <div class="row tx-cms-census-footer">
     <div class="col-sm">
         <small>
