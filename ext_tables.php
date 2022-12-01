@@ -10,6 +10,10 @@ defined('TYPO3') || die();
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_cmscensus_domain_model_whatcmstype', 'EXT:cms_census/Resources/Private/Language/locallang_csh_tx_cmscensus_domain_model_whatcmstype.xlf');
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_cmscensus_domain_model_whatcmstype');
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_cmscensus_domain_model_versions', 'EXT:cms_census/Resources/Private/Language/locallang_csh_tx_cmscensus_domain_model_versions.xlf');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_cmscensus_domain_model_versions');
+
 })();
 
 // Register sprite icons for new tables

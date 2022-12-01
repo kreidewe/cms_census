@@ -56,6 +56,7 @@ class CategoryUrls
                         WHERE tx_cmscensus_url_category_mm.uid_foreign = ? 
                         AND is_proposal = 0
                         AND deleted = 0
+                        AND httpstatus = 200
                         GROUP BY whatcmstype',
                 [$categoryUid]
             )->execute();
@@ -74,6 +75,7 @@ class CategoryUrls
                         FROM tx_cmscensus_domain_model_url 
                         WHERE whatcmstype = ?
                         AND is_proposal = 0
+                        AND httpstatus = 200
                         AND deleted = 0',
                     [$row->getWhatcmstype()]
                 )->execute()->count();
@@ -86,6 +88,7 @@ class CategoryUrls
                         WHERE tx_cmscensus_url_category_mm.uid_foreign = ? 
                         AND whatcmstype = ?
                         AND is_proposal = 0
+                        AND httpstatus = 200
                         AND deleted = 0',
                     [$categoryUid, $row->getWhatcmstype()]
                 )->execute()->count();
