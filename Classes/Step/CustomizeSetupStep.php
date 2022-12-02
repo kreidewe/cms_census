@@ -8,8 +8,8 @@ use Cobweb\ExternalImport\Step\AbstractStep;
 use Doctrine\DBAL\Query\QueryBuilder;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
 
 /**
  * Class for adapting the connector URI parameter.
@@ -78,9 +78,7 @@ class CustomizeSetupStep extends AbstractStep
             } else {
                 // Abort because no url was found
                 $this->setAbortFlag(true);
-                $this->getImporter()->addMessage('No URL was found for the import query!',
-                    FlashMessage::WARNING
-                );
+                $this->addFlashMessage('No URL was found for the import query!', 'No URL was found for the import query!', AbstractMessage::WARNING);
             }
         }
 

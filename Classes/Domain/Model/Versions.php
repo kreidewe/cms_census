@@ -21,13 +21,6 @@ class Versions extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * id
-     *
-     * @var int
-     */
-    protected $id = 0;
-
-    /**
      * token
      *
      * @var string
@@ -41,26 +34,6 @@ class Versions extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $expirey = '';
 
-    /**
-     * Returns the id
-     *
-     * @return int $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Sets the id
-     *
-     * @param int $id
-     * @return void
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * Returns the token

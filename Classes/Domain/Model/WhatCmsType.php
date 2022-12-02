@@ -21,13 +21,6 @@ class WhatCmsType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * id
-     *
-     * @var int
-     */
-    protected $id = 0;
-
-    /**
      * label
      *
      * @var string
@@ -40,27 +33,6 @@ class WhatCmsType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $name = '';
-
-    /**
-     * Returns the id
-     *
-     * @return int $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Sets the id
-     *
-     * @param int $id
-     * @return void
-     */
-    public function setId(int $id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * Returns the label
