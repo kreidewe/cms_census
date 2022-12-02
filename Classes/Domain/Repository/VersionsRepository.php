@@ -64,7 +64,6 @@ class VersionsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             $queryBuilder
                 ->insert('tx_cmscensus_domain_model_versions')
                 ->values([
-                    'uid' => 1,
                     'token' => $response->token,
                     'expirey' => $response->expiry,
                 ])
