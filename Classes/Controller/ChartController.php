@@ -88,7 +88,7 @@ class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         if($searchData['domain']) {
             $sortBy=='null' ? $sortBy = null : $sortBy;
             $sort=='null' ? $sort = null : $sortBy;
-            $searchResult = $this->urlRepository->fetchSearchResult($searchData, $sortBy,$sort);
+            $searchResult = $this->urlRepository->fetchSearchResult($searchData, $sortBy,$sort)->toArray();
         }
 
         if(!empty($GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['currentPage']))
@@ -97,6 +97,13 @@ class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         }
         $arrayPaginator = new ArrayPaginator($searchResult, $currentPage, 10);
         $pagination = new SimplePagination($arrayPaginator);
+        $range = '1-10';
+        if($currentPage > 1){
+            $range = (($currentPage - 1) * 10) + 1 .'-'. (($currentPage - 1) * 10) + 10;
+        }
+        if($currentPage == $arrayPaginator->getNumberOfPages()){
+            $range = (($currentPage - 1) * 10) + 1 .'-'. count($searchResult);
+        }
         $this->view->assignMultiple(
             [
                 'searchData' => $searchData,
@@ -107,6 +114,8 @@ class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 'searchResult' => $searchResult,
                 'paginator' => $arrayPaginator,
                 'pagination' => $pagination,
+                'range' => $range,
+                'total' => count($searchResult),
             ]
         );
     }

@@ -30,6 +30,7 @@
                     </tbody>
                 </table>
                 <f:render partial="ArrayPagination" arguments="{_all}" />
+                <span>{f:translate(key:'results')} {range} of {total}</span>
             </f:then>
             <f:else>
                 <div>

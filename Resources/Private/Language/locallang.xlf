@@ -121,6 +121,9 @@
 			<trans-unit id="norecords">
 				<source>Records not found</source>
 			</trans-unit>
+			<trans-unit id="results">
+				<source>Results</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

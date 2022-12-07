@@ -241,5 +241,13 @@ return [
                 ]
             ]
         ],
+        'tstamp' => [
+            'label' => 'tstamp',
+            'config' => [
+                'type' => 'input',
+                'renderType' => 'inputDateTime',
+                'eval' => 'datetime',
+            ]
+        ],
     ],
 ];

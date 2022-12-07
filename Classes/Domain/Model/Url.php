@@ -77,6 +77,32 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $whatcmstype = '';
 
     /**
+     * tstamp
+     *
+     * @var int
+     */
+    protected $tstamp;
+    
+    /**
+     * @return int $tstamp
+     */
+    public function getTstamp()
+    {
+        return $this->tstamp;
+    }
+
+     /**
+     * Sets the tstamp
+     *
+     * @param string $tstamp
+     * @return void
+     */
+    public function setTstamp(string $tstamp)
+    {
+        $this->tstamp = $tstamp;
+    }
+
+    /**
      * __construct
      */
     public function __construct()

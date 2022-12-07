@@ -5,6 +5,7 @@ CREATE TABLE tx_cmscensus_domain_model_url
     is_proposal            smallint(1) unsigned NOT NULL DEFAULT '0',
     only_next_auto_update  smallint(1) unsigned NOT NULL DEFAULT '0',
     every_auto_update      smallint(1) unsigned NOT NULL DEFAULT '0',
+	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     is_auto_update_planned smallint(1) unsigned NOT NULL DEFAULT '0',
     categories             int(11) unsigned NOT NULL DEFAULT '0',
     whatcmstype            varchar(255) NOT NULL DEFAULT '',

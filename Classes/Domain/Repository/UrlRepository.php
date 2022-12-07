@@ -118,23 +118,22 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         if($searchData['domain']){
             $sort = $sort ? $sort : 'uid';
             $formate = $formate ? $formate : 'ASC';
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
-            $queryBuilder
-            ->select('*')
-            ->from('tx_cmscensus_domain_model_url')
-            ->where(
-                $queryBuilder->expr()->like(
-                    'name',
-                    $queryBuilder->createNamedParameter($queryBuilder->escapeLikeWildcards($searchData['domain']) . '%')
-                )
-            )
-            ->addOrderBy((string)$sort, $formate);
+            $order = $sort."\n".$formate;
+            $query = $this->createQuery();
+            $result = $query->statement(
+                'SELECT *
+                    FROM tx_cmscensus_domain_model_url 
+                        INNER JOIN tx_cmscensus_url_category_mm 
+                            ON tx_cmscensus_domain_model_url.uid = tx_cmscensus_url_category_mm.uid_local 
+                    WHERE tx_cmscensus_url_category_mm.uid_foreign = ? 
+                    AND `name` LIKE ?
+                    AND is_proposal = 0
+                    AND httpstatus = 200
+                    AND deleted = 0
+                    ORDER BY '.$order.'; ',
+                [$searchData['catId'],'%'.$searchData['domain'].'%']
+            )->execute();        
         } 
-        $out = $queryBuilder->execute();
-        $result = [];
-        while ($row = $out->fetchAssociative()) {
-            $result[] = $row;
-        }
         return $result;
     }
 }
