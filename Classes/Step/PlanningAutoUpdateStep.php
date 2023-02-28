@@ -11,8 +11,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class for scheduling automatic updates.
- *
- * @package AUBA\CmsCensus\Step
  */
 class PlanningAutoUpdateStep extends AbstractStep
 {
@@ -21,7 +19,7 @@ class PlanningAutoUpdateStep extends AbstractStep
      *
      * @var QueryBuilder
      */
-    protected $queryBuilder = null;
+    protected $queryBuilder;
 
     /**
      * PlanningAutoUpdateStep constructor.
@@ -36,8 +34,6 @@ class PlanningAutoUpdateStep extends AbstractStep
 
     /**
      * Performs the actual tasks of the step.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -70,8 +66,6 @@ class PlanningAutoUpdateStep extends AbstractStep
 
     /**
      * Planning all entries to auto update
-     *
-     * @return void
      */
     protected function planningAutoUpdate(): void
     {

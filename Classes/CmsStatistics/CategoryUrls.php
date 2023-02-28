@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AUBA\CmsCensus\CmsStatistics;
@@ -16,8 +17,7 @@ class CategoryUrls
      *
      * @var UrlRepository
      */
-    protected $urlRepository = null;
-
+    protected $urlRepository;
 
     /**
      * Constructor __construct
@@ -29,7 +29,6 @@ class CategoryUrls
         $this->urlRepository = $urlRepository;
     }
 
-
     /**
      * Count CMS of a Category Urls. Returns an array: ['data' => ..., 'labels' => ... ]
      *
@@ -37,23 +36,22 @@ class CategoryUrls
      */
     public function countCmsOfCategoryUrls(int $categoryUid = 0): array
     {
-
         $query = $this->urlRepository->createQuery();
 
         if ($categoryUid == 0) {
             $queryResult = $query->statement(
-                'SELECT * 
+                'SELECT *
                         FROM tx_cmscensus_domain_model_url
                         WHERE is_proposal = 0
                         GROUP BY whatcmstype'
             )->execute();
         } else {
             $queryResult = $query->statement(
-                'SELECT * 
-                        FROM tx_cmscensus_domain_model_url 
-                            INNER JOIN tx_cmscensus_url_category_mm 
-                                ON tx_cmscensus_domain_model_url.uid = tx_cmscensus_url_category_mm.uid_local 
-                        WHERE tx_cmscensus_url_category_mm.uid_foreign = ? 
+                'SELECT *
+                        FROM tx_cmscensus_domain_model_url
+                            INNER JOIN tx_cmscensus_url_category_mm
+                                ON tx_cmscensus_domain_model_url.uid = tx_cmscensus_url_category_mm.uid_local
+                        WHERE tx_cmscensus_url_category_mm.uid_foreign = ?
                         AND is_proposal = 0
                         AND deleted = 0
                         AND httpstatus = 200
@@ -72,7 +70,7 @@ class CategoryUrls
             if ($categoryUid == 0) {
                 $whatCmsTypeUrlsCount = $query->statement(
                     'SELECT *
-                        FROM tx_cmscensus_domain_model_url 
+                        FROM tx_cmscensus_domain_model_url
                         WHERE whatcmstype = ?
                         AND is_proposal = 0
                         AND httpstatus = 200
@@ -81,11 +79,11 @@ class CategoryUrls
                 )->execute()->count();
             } else {
                 $whatCmsTypeUrlsCount = $query->statement(
-                    'SELECT * 
-                        FROM tx_cmscensus_domain_model_url 
-                            INNER JOIN tx_cmscensus_url_category_mm 
-                                ON tx_cmscensus_domain_model_url.uid = tx_cmscensus_url_category_mm.uid_local 
-                        WHERE tx_cmscensus_url_category_mm.uid_foreign = ? 
+                    'SELECT *
+                        FROM tx_cmscensus_domain_model_url
+                            INNER JOIN tx_cmscensus_url_category_mm
+                                ON tx_cmscensus_domain_model_url.uid = tx_cmscensus_url_category_mm.uid_local
+                        WHERE tx_cmscensus_url_category_mm.uid_foreign = ?
                         AND whatcmstype = ?
                         AND is_proposal = 0
                         AND httpstatus = 200
@@ -112,12 +110,12 @@ class CategoryUrls
             $cmsUrlsCounts[] = $value;
             $cmsColors[] = $this->getRGBString($splitCounter, $rgbSwitcher, $arrayIndex);
             $cmsUrlsPercentages[] = round($value / $cmsSumCmsUrlsCounts * 100, 2, PHP_ROUND_HALF_UP);
-            $cmsTable[$arrayIndex] = array(
+            $cmsTable[$arrayIndex] = [
                 'cmsLabel' => $key,
                 'cmsUrlsCount' => $value,
                 'cmsColor' => $cmsColors[$arrayIndex],
-                'cmsUrlsPercentage' => $cmsUrlsPercentages[$arrayIndex]
-            );
+                'cmsUrlsPercentage' => $cmsUrlsPercentages[$arrayIndex],
+            ];
             $arrayIndex++;
             $rgbSwitcher == 5 ? $rgbSwitcher = 0 : $rgbSwitcher++;
         }
@@ -152,5 +150,4 @@ class CategoryUrls
                 return 'rgb(' . 0 . ',' . 0 . ',' . 0 . ')';
         }
     }
-
 }

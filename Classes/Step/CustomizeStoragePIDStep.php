@@ -10,8 +10,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class for customize storePID parameter.
- *
- * @package AUBA\CmsCensus\Step
  */
 class CustomizeStoragePIDStep extends AbstractStep
 {
@@ -35,7 +33,6 @@ class CustomizeStoragePIDStep extends AbstractStep
     /**
      * Performs the actual tasks of the step.
      *
-     * @return void
      * @throws \Doctrine\DBAL\Driver\Exception
      */
     public function run(): void
@@ -45,13 +42,11 @@ class CustomizeStoragePIDStep extends AbstractStep
 
     /**
      * Set pid to StoragePID if StoragePID is not 0.
-     *
-     * @return void
      */
     protected function setStoragePID(): void
     {
         $generalConfiguration = $this->getImporter()->getExternalConfiguration()->getGeneralConfiguration();
-        if((int)$this->extensionConfiguration['storagePID'] != 0){
+        if ((int)$this->extensionConfiguration['storagePID'] != 0) {
             $generalConfiguration['pid'] = (int)$this->extensionConfiguration['storagePID'];
             $this->getImporter()->getExternalConfiguration()->setGeneralConfiguration($generalConfiguration);
         }

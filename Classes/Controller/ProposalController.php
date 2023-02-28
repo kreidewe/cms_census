@@ -28,13 +28,12 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  */
 class ProposalController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * urlRepository
      *
      * @var UrlRepository
      */
-    protected $urlRepository = null;
+    protected $urlRepository;
 
     /**
      * @param UrlRepository $urlRepository
@@ -49,7 +48,7 @@ class ProposalController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      *
      * @var CategoryRepository
      */
-    protected $categoryRepository = null;
+    protected $categoryRepository;
 
     /**
      * @param CategoryRepository $categoryRepository
@@ -91,7 +90,7 @@ class ProposalController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     {
         // Checking whether the offer with authentication is activated
         // and forwarding if the user is not logged in
-        if($this->extensionConfiguration['enableProposalWithAuth'] == 1){
+        if ($this->extensionConfiguration['enableProposalWithAuth'] == 1) {
             $context = GeneralUtility::makeInstance(Context::class);
             if (!$context->getPropertyFromAspect('frontend.user', 'isLoggedIn')) {
                 $this->redirect(null, null, null, null, $this->extensionConfiguration['loginPID']);
@@ -145,8 +144,11 @@ class ProposalController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
                 'tx_cmscensus_flashmessage_proposal-warning-exist.category',
                 'CmsCensus'
             );
-            $this->addFlashMessage($warningMessageBody . ' => [' . $newCategory->getName() . ']', '',
-                AbstractMessage::WARNING);
+            $this->addFlashMessage(
+                $warningMessageBody . ' => [' . $newCategory->getName() . ']',
+                '',
+                AbstractMessage::WARNING
+            );
             $this->redirect('addCategoryForm');
         } else {
             $newCategory->setIsProposal(true);
@@ -158,7 +160,7 @@ class ProposalController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     /**
      * function to complete the creation process
      *
-     * @param String $redirectDestination
+     * @param string $redirectDestination
      */
     protected function finishCreation(string $redirectDestination): void
     {

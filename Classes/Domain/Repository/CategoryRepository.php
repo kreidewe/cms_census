@@ -19,7 +19,7 @@ namespace AUBA\CmsCensus\Domain\Repository;
 class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
     /**
-     * @param String $categoryName
+     * @param string $categoryName
      * @return bool $categoryExist
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
@@ -31,10 +31,9 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         );
         $result = $query->execute();
 
-        if($result->count() > 0){
+        if ($result->count() > 0) {
             return true;
-        }else{
-            return false;
         }
+        return false;
     }
 }

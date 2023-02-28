@@ -13,8 +13,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class for adapting the connector URI parameter.
- *
- * @package AUBA\CmsCensus\Step
  */
 class CustomizeSetupStep extends AbstractStep
 {
@@ -23,7 +21,7 @@ class CustomizeSetupStep extends AbstractStep
      *
      * @var QueryBuilder
      */
-    protected $queryBuilder = null;
+    protected $queryBuilder;
 
     /**
      * @var array Extension configuration
@@ -48,7 +46,6 @@ class CustomizeSetupStep extends AbstractStep
     /**
      * Performs the actual tasks of the step.
      *
-     * @return void
      * @throws \Doctrine\DBAL\Driver\Exception
      */
     public function run(): void
@@ -58,8 +55,6 @@ class CustomizeSetupStep extends AbstractStep
 
     /**
      * Set uri parameter.
-     *
-     * @return void
      */
     protected function setUriParameter(): void
     {
@@ -69,7 +64,7 @@ class CustomizeSetupStep extends AbstractStep
         $requestUrl = $this->getRequestUrl();
 
         foreach ($parameters as $key => $value) {
-            if($requestUrl != ''){
+            if ($requestUrl != '') {
                 // Update the "whatCmsApiKey" and "requestUrl" string from the "uri" parameter, if it exists
                 if ($key === 'uri' && strpos($value, 'whatCmsApiKey') !== false) {
                     $parameters[$key] = str_replace('whatCmsApiKey', $this->extensionConfiguration['whatCmsApiKey'], $value);
@@ -78,7 +73,8 @@ class CustomizeSetupStep extends AbstractStep
             } else {
                 // Abort because no url was found
                 $this->setAbortFlag(true);
-                $this->getImporter()->addMessage('No URL was found for the import query!',
+                $this->getImporter()->addMessage(
+                    'No URL was found for the import query!',
                     FlashMessage::WARNING
                 );
             }

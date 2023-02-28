@@ -1,4 +1,5 @@
 <?php
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cmscensus_domain_model_versions',
@@ -10,7 +11,7 @@ return [
         'default_sortby' => 'ORDER BY id',
         'searchFields' => 'token, expirey',
         'typeicon_classes' => [
-            'default' => 'tx_cmscensus_domain_model_versions'
+            'default' => 'tx_cmscensus_domain_model_versions',
         ],
     ],
     'external' => [
@@ -18,7 +19,7 @@ return [
             0 => [
                 'connector' => 'json',
                 'parameters' => [
-                    'uri' => 'https://whatcms.org/API/List'
+                    'uri' => 'https://whatcms.org/API/List',
                 ],
                 'data' => 'array',
                 'arrayPath' => 'result{code === 200}/list',
@@ -26,13 +27,13 @@ return [
                 'customSteps' => [
                     [
                         'class' => AUBA\CmsCensus\Step\CustomizeStoragePIDStep::class,
-                        'position' => 'before:' . \Cobweb\ExternalImport\Step\StoreDataStep::class
-                    ]
+                        'position' => 'before:' . \Cobweb\ExternalImport\Step\StoreDataStep::class,
+                    ],
                 ],
                 'priority' => 5300,
-                'description' => 'Import List of whatcms.org Types'
-            ]
-        ]
+                'description' => 'Import List of whatcms.org Types',
+            ],
+        ],
     ],
     'types' => [
         '1' => ['showitem' => 'id, token, expirey, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden'],
@@ -48,8 +49,8 @@ return [
                     [
                         0 => '',
                         1 => '',
-                        'invertStateDisplay' => true
-                    ]
+                        'invertStateDisplay' => true,
+                    ],
                 ],
             ],
         ],
@@ -60,18 +61,18 @@ return [
                 'type' => 'input',
                 'size' => 4,
                 'eval' => 'int',
-                'default' => 0
+                'default' => 0,
             ],
             'external' => [
                 0 => [
                     'field' => 'id',
                     'transformations' => [
                         10 => [
-                            'trim' => false
-                        ]
-                    ]
-                ]
-            ]
+                            'trim' => false,
+                        ],
+                    ],
+                ],
+            ],
         ],
         'token' => [
             'exclude' => true,
@@ -80,18 +81,18 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'default' => ''
+                'default' => '',
             ],
             'external' => [
                 0 => [
                     'field' => 'token',
                     'transformations' => [
                         30 => [
-                            'trim' => true
-                        ]
-                    ]
-                ]
-            ]
+                            'trim' => true,
+                        ],
+                    ],
+                ],
+            ],
         ],
         'expirey' => [
             'exclude' => true,
@@ -100,7 +101,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'default' => ''
+                'default' => '',
             ],
             'external' => [
                 0 => [
@@ -109,12 +110,12 @@ return [
                         10 => [
                             'userFunction' => [
                                 'class' => AUBA\CmsCensus\UserFunction\Transformation::class,
-                                'method' => 'getCommaSeparatedValuesFromArray'
-                            ]
-                        ]
+                                'method' => 'getCommaSeparatedValuesFromArray',
+                            ],
+                        ],
                     ],
-                ]
-            ]
+                ],
+            ],
         ],
 
     ],

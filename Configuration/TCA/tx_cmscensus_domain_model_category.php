@@ -1,4 +1,5 @@
 <?php
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:cms_census/Resources/Private/Language/locallang_db.xlf:tx_cmscensus_domain_model_category',
@@ -13,7 +14,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'name,description',
-        'iconfile' => 'EXT:cms_census/Resources/Public/Icons/tx_cmscensus_domain_model_category.gif'
+        'iconfile' => 'EXT:cms_census/Resources/Public/Icons/tx_cmscensus_domain_model_category.gif',
     ],
     'types' => [
         '1' => ['showitem' => 'name, description, is_proposal, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
@@ -29,8 +30,8 @@ return [
                     [
                         0 => '',
                         1 => '',
-                        'invertStateDisplay' => true
-                    ]
+                        'invertStateDisplay' => true,
+                    ],
                 ],
             ],
         ],
@@ -43,8 +44,8 @@ return [
                 'eval' => 'datetime,int',
                 'default' => 0,
                 'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ]
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
         'endtime' => [
@@ -56,11 +57,11 @@ return [
                 'eval' => 'datetime,int',
                 'default' => 0,
                 'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
                 ],
                 'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ]
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
         ],
 
@@ -71,7 +72,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'default' => ''
+                'default' => '',
             ],
         ],
         'description' => [
@@ -82,8 +83,8 @@ return [
                 'cols' => 40,
                 'rows' => 15,
                 'eval' => 'trim',
-                'default' => ''
-            ]
+                'default' => '',
+            ],
         ],
         'is_proposal' => [
             'exclude' => true,
@@ -95,11 +96,11 @@ return [
                     [
                         0 => '',
                         1 => '',
-                    ]
+                    ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
-    
+
     ],
 ];

@@ -74,7 +74,7 @@
 			</trans-unit>
 			<trans-unit id="tx_cmscensus_domain_model_category.enableList" resname="tx_cmscensus_domain_model_category.enableList">
 				<source>Enable List View</source>
-            </trans-unit>
+			</trans-unit>
 			<trans-unit id="tx_cmscensus_domain_model_versions" resname="tx_cmscensus_domain_model_versions">
 				<source>Versions</source>
 			</trans-unit>

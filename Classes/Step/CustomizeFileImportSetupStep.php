@@ -13,12 +13,9 @@ use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 
 /**
  * Class for adapting the connector URI parameter.
- *
- * @package AUBA\CmsCensus\Step
  */
 class CustomizeFileImportSetupStep extends AbstractStep
 {
-
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager
      */
@@ -34,7 +31,7 @@ class CustomizeFileImportSetupStep extends AbstractStep
      *
      * @var CategoryRepository
      */
-    protected $categoryRepository = null;
+    protected $categoryRepository;
 
     /**
      * CustomizeSetupStep constructor.
@@ -55,8 +52,6 @@ class CustomizeFileImportSetupStep extends AbstractStep
 
     /**
      * Performs the actual tasks of the step.
-     *
-     * @return void
      */
     public function run(): void
     {
@@ -66,8 +61,6 @@ class CustomizeFileImportSetupStep extends AbstractStep
 
     /**
      * Set uri parameter.
-     *
-     * @return void
      */
     protected function setUriParameter(): void
     {
@@ -78,10 +71,16 @@ class CustomizeFileImportSetupStep extends AbstractStep
         foreach ($parameters as $key => $value) {
             // Update the "whatCmsJsonFilePath" string from the "uri" parameter, if it exists
             if ($key === 'uri' && strpos($value, 'fileadminImportFolderPath') !== false) {
-                $parameters[$key] = str_replace('fileadminImportFolderPath',
-                    $destinationAbsolutePath . $this->extensionConfiguration['fileadminImportFolderPath'], $value);
-                $parameters[$key] = str_replace('importFileName', $this->extensionConfiguration['importFileName'],
-                    $parameters[$key]);
+                $parameters[$key] = str_replace(
+                    'fileadminImportFolderPath',
+                    $destinationAbsolutePath . $this->extensionConfiguration['fileadminImportFolderPath'],
+                    $value
+                );
+                $parameters[$key] = str_replace(
+                    'importFileName',
+                    $this->extensionConfiguration['importFileName'],
+                    $parameters[$key]
+                );
                 $parameters[$key] = str_replace('//', '/', $parameters[$key]);
             }
         }
@@ -99,26 +98,26 @@ class CustomizeFileImportSetupStep extends AbstractStep
     {
         $columnConfiguration = $this->getImporter()->getExternalConfiguration()->getColumnConfiguration();
 
-        if($this->extensionConfiguration['importCategoryName'] != '') {
+        if ($this->extensionConfiguration['importCategoryName'] != '') {
             $query = $this->categoryRepository->createQuery();
             $queryResult = $query->statement(
-                'SELECT * 
+                'SELECT *
                         FROM tx_cmscensus_domain_model_category
                         WHERE name = ?
                         AND deleted = 0',
                 [$this->extensionConfiguration['importCategoryName']]
             )->execute();
 
-            if(count($queryResult) == 0){
+            if (count($queryResult) == 0) {
                 $newCategory = GeneralUtility::makeInstance(Category::class);
                 $newCategory->setName($this->extensionConfiguration['importCategoryName']);
                 $newCategory->setPid((int)$this->extensionConfiguration['storagePID']);
                 $this->categoryRepository->add($newCategory);
                 $this->persistenceManager->persistAll();
 
-                $categoriesTransformations[10] = array('value' => $newCategory->getUid());
-            }else{
-                $categoriesTransformations[10] = array('value' => $queryResult[0]->getUid());
+                $categoriesTransformations[10] = ['value' => $newCategory->getUid()];
+            } else {
+                $categoriesTransformations[10] = ['value' => $queryResult[0]->getUid()];
             }
 
             $categories['transformations'] = $categoriesTransformations;

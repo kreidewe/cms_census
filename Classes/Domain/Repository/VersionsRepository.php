@@ -21,7 +21,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class VersionsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    public function checkTokenExist(){
+    public function checkTokenExist()
+    {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_versions');
         $statement = $queryBuilder
             ->select('*')
@@ -31,27 +32,24 @@ class VersionsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             )
             ->execute()->fetch();
 
-        if($statement){
-            $currantDate = new \DateTime('now');;
+        if ($statement) {
+            $currantDate = new \DateTime('now');
             $expireyDate = new \DateTime($statement['expirey']);
             $expireyDate->setTimezone(new \DateTimeZone(date_default_timezone_get()));
-            if($currantDate < $expireyDate){
+            if ($currantDate < $expireyDate) {
                 return $statement['token'];
-            } else {
-                //Expired Token
-                return 1;
             }
-        } else {
-            //No Token Saved
-            return 0;
+            //Expired Token
+            return 1;
         }
-        
+        //No Token Saved
+        return 0;
     }
 
-    public function saveToken($response,$stat = NULL){
-
+    public function saveToken($response, $stat = null)
+    {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_versions');
-        if($stat == 1){
+        if ($stat == 1) {
             $queryBuilder
             ->update('tx_cmscensus_domain_model_versions')
             ->where(
@@ -60,7 +58,7 @@ class VersionsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             ->set('token', $response->token)
             ->set('expirey', $response->expiry)
             ->execute();
-        }elseif($stat == 0) {
+        } elseif ($stat == 0) {
             $queryBuilder
                 ->insert('tx_cmscensus_domain_model_versions')
                 ->values([
