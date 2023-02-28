@@ -9,7 +9,7 @@
 .tx-cms-census-footer {
     margin-top: 0.8rem;
 }
- 
+
 /* CSS styles moved from setup.typoscript to cmscensus.css */
 textarea.f3-form-error {
     background-color:#FF9F9F;
@@ -174,7 +174,7 @@ li a {
     text-decoration: none;
     font-size: larger;
 }
-  
+
 li a:hover {
     color: #a86800;
 }

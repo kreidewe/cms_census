@@ -17,7 +17,7 @@
 			</trans-unit>
 			<trans-unit id="config.fileadminImportFolderPath" xml:space="preserve">
 				<source>Folder Path to Import File: Enter the full folder path to the JSON file.
-					    (From path: fileadmin/)
+						(From path: fileadmin/)
 				</source>
 			</trans-unit>
 			<trans-unit id="config.importFileName" xml:space="preserve">

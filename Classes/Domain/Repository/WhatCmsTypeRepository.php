@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AUBA\CmsCensus\Domain\Repository;
 
-
 /**
  * This file is part of the "CMS Census Extension" Extension for TYPO3 CMS.
  *

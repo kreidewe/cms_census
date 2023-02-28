@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AUBA\CmsCensus\Domain\Model;
 
-
 /**
  * This file is part of the "CMS Census Extension" Extension for TYPO3 CMS.
  *
@@ -19,7 +18,6 @@ namespace AUBA\CmsCensus\Domain\Model;
  */
 class WhatCmsType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * id
      *
@@ -55,7 +53,6 @@ class WhatCmsType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the id
      *
      * @param int $id
-     * @return void
      */
     public function setId(int $id)
     {
@@ -76,7 +73,6 @@ class WhatCmsType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the label
      *
      * @param string $label
-     * @return void
      */
     public function setLabel(string $label)
     {
@@ -97,7 +93,6 @@ class WhatCmsType extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the name
      *
      * @param string $name
-     * @return void
      */
     public function setName(string $name)
     {

@@ -14,18 +14,18 @@ $(document).ready(
             var data = {
                 labels: label,
                 datasets: dataset
-            };              
+            };
             new Chart('chart', {
                 type: 'bar',
                 data: data
             });
         }
-        
+
         var listUrl = document.getElementsByClassName('listUrl');
         if(listUrl.length > 0) {
             for (let i = 0; i < listUrl.length; i++) {
             listUrl[i].addEventListener("click", function (e) {
-                document.getElementById("graph-container").style.display = "block"; 
+                document.getElementById("graph-container").style.display = "block";
                 var url = this.getAttribute("href");
                 var xhr = new XMLHttpRequest();
                 xhr.open("GET", url);
@@ -46,7 +46,7 @@ $(document).ready(
                         var myChart = new Chart('chartList', {
                             type: 'bar',
                             data: data
-                        }); 
+                        });
                     }
                 };
                 xhr.send();
@@ -68,7 +68,7 @@ $(document).ready(
                     if (this.readyState == 4 && this.status == 200) {
                         var parser = new DOMParser();
                         var xmlDoc = parser.parseFromString(xhr.responseText, "text/html");
-                        document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;  
+                        document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;
 
                         var columnSort = document.getElementsByClassName('columnSort');
                         if(columnSort.length > 0) {
@@ -103,12 +103,12 @@ $(document).ready(
             data.append('formate',urlParams.get('tx_cmscensus_chartcmscensus[formate]'));
             let xhr = new XMLHttpRequest();
             xhr.open("POST", url);
-            
+
             xhr.onreadystatechange = function (data) {
               if (this.readyState == 4 && this.status == 200) {
                 var parser = new DOMParser();
                 var xmlDoc = parser.parseFromString(xhr.responseText, "text/html");
-                document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;  
+                document.getElementById("ajaxResult").innerHTML = xmlDoc.getElementById('ajaxData').innerHTML;
 
                 var columnSort = document.getElementsByClassName('columnSort');
                 if(columnSort.length > 0) {
@@ -119,7 +119,7 @@ $(document).ready(
                     });
                     }
                 }
-                
+
                 var pagination = document.getElementsByClassName('article-load-more');
                 if(pagination.length > 0) {
                     for (let i = 0; i < pagination.length; i++) {

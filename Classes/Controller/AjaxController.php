@@ -18,25 +18,24 @@ class AjaxController extends ActionController
      *
      * @var CategoryUrls
      */
-    protected $categoryUrls = null;
+    protected $categoryUrls;
 
     /**
-     *
      * @return ResponseInterface
      */
     public function cmsPerCategoryUrlsAction(Category $category = null): ResponseInterface
     {
         // Do all Urls, if catergory is empty
-        if ($category == null || $category->getName() == "") {
+        if ($category == null || $category->getName() == '') {
             $categoryUid = 0;
-        }else{
+        } else {
             $categoryUid = $category->getUid();
         }
 
         $this->categoryUrls = GeneralUtility::makeInstance(CategoryUrls::class);
 
         $data = [
-            'cmsPerCategoryUrls' => $this->categoryUrls->countCmsOfCategoryUrls($categoryUid)
+            'cmsPerCategoryUrls' => $this->categoryUrls->countCmsOfCategoryUrls($categoryUid),
         ];
 
         return (new JsonResponse())->setPayload($data);

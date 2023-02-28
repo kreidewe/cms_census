@@ -7,9 +7,9 @@ namespace AUBA\CmsCensus\Controller;
 use AUBA\CmsCensus\CmsStatistics\CategoryUrls;
 use AUBA\CmsCensus\Domain\Repository\CategoryRepository;
 use AUBA\CmsCensus\Domain\Repository\UrlRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Pagination\ArrayPaginator;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * This file is part of the "CMS Census Extension" Extension for TYPO3 CMS.
@@ -25,20 +25,19 @@ use TYPO3\CMS\Core\Pagination\SimplePagination;
  */
 class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * categoryUrls
      *
      * @var CategoryUrls
      */
-    protected $categoryUrls = null;
+    protected $categoryUrls;
 
     /**
      * urlRepository
      *
      * @var UrlRepository
      */
-    protected $urlRepository = null;
+    protected $urlRepository;
 
     /**
      * @param UrlRepository $urlRepository
@@ -53,7 +52,7 @@ class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      *
      * @var CategoryRepository
      */
-    protected $categoryRepository = null;
+    protected $categoryRepository;
 
     /**
      * @param CategoryRepository $categoryRepository
@@ -63,9 +62,6 @@ class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->categoryRepository = $categoryRepository;
     }
 
-    /**
-     *
-     */
     public function showAction(): void
     {
         $categoryUid = (int)$this->settings['categoryUid'];
@@ -85,14 +81,13 @@ class ChartController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $searchData = GeneralUtility::_GP('tx_cmscensus_chartcmscensus');
         $sortBy = GeneralUtility::_GP('sortby');
         $sort = GeneralUtility::_GP('formate');
-        if($searchData['domain']) {
+        if ($searchData['domain']) {
             $sortBy=='null' ? $sortBy = null : $sortBy;
             $sort=='null' ? $sort = null : $sortBy;
-            $searchResult = $this->urlRepository->fetchSearchResult($searchData, $sortBy,$sort);
+            $searchResult = $this->urlRepository->fetchSearchResult($searchData, $sortBy, $sort);
         }
 
-        if(!empty($GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['currentPage']))
-        {
+        if (!empty($GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['currentPage'])) {
             $currentPage = (int)$GLOBALS['_GET']['tx_cmscensus_chartcmscensus']['currentPage'];
         }
         $arrayPaginator = new ArrayPaginator($searchResult, $currentPage, 10);

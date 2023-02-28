@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AUBA\CmsCensus\Domain\Repository;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * This file is part of the "CMS Census Extension" Extension for TYPO3 CMS.
@@ -21,8 +21,8 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
  */
 class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    public function fetchUrls($argumentPerCron,$sysfolderID){
-        
+    public function fetchUrls($argumentPerCron, $sysfolderID)
+    {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
         $flag = $queryBuilder->select('uid')
             ->from('tx_cmscensus_domain_model_url')
@@ -31,7 +31,7 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             )
             ->execute()->fetchAssociative();
 
-        if(!$flag){
+        if (!$flag) {
             $flag = $queryBuilder->select('uid')
             ->from('tx_cmscensus_domain_model_url')
             ->where(
@@ -51,7 +51,7 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             )
             ->setMaxResults((int)$argumentPerCron)
             ->execute();
-        
+
         $result = [];
         while ($row = $out->fetchAssociative()) {
             $result[] = $row;
@@ -60,7 +60,8 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $result;
     }
 
-    public function updateStatus($uid,$status){
+    public function updateStatus($uid, $status)
+    {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
         $queryBuilder
             ->update('tx_cmscensus_domain_model_url')
@@ -72,9 +73,10 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return;
     }
 
-    public function updateFlag($uid,$sysfolderID){
+    public function updateFlag($uid, $sysfolderID)
+    {
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
-        
+
         $lastUid = $queryBuilder->select('uid')
             ->from('tx_cmscensus_domain_model_url')
             ->where(
@@ -83,7 +85,7 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             ->addOrderBy('uid', 'DESC')
             ->execute()
             ->fetchOne();
-        if((int)$lastUid != (int)$uid){
+        if ((int)$lastUid != (int)$uid) {
             $queryBuilder
             ->update('tx_cmscensus_domain_model_url')
             ->where(
@@ -108,14 +110,14 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             ->set('checkflag', 0)
             ->execute();
         }
-        return;        
+        return;
     }
     /**
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
-    public function fetchSearchResult($searchData,$sort,$formate){
-
-        if($searchData['domain']){
+    public function fetchSearchResult($searchData, $sort, $formate)
+    {
+        if ($searchData['domain']) {
             $sort = $sort ? $sort : 'uid';
             $formate = $formate ? $formate : 'ASC';
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_cmscensus_domain_model_url');
@@ -129,7 +131,7 @@ class UrlRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
                 )
             )
             ->addOrderBy((string)$sort, $formate);
-        } 
+        }
         $out = $queryBuilder->execute();
         $result = [];
         while ($row = $out->fetchAssociative()) {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AUBA\CmsCensus\Domain\Model;
 
-
 /**
  * This file is part of the "CMS Census Extension" Extension for TYPO3 CMS.
  *
@@ -19,7 +18,6 @@ namespace AUBA\CmsCensus\Domain\Model;
  */
 class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * name
      *
@@ -67,7 +65,7 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\AUBA\CmsCensus\Domain\Model\Category>
      */
-    protected $categories = null;
+    protected $categories;
 
     /**
      * URL WhatCms.org Type
@@ -81,7 +79,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     public function __construct()
     {
-
         // Do not remove the next line: It would break the functionality
         $this->initializeObject();
     }
@@ -91,8 +88,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Do not modify this method!
      * It will be rewritten on each save in the extension builder
      * You may modify the constructor of this class instead
-     *
-     * @return void
      */
     public function initializeObject()
     {
@@ -113,7 +108,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the name
      *
      * @param string $name
-     * @return void
      */
     public function setName(string $name)
     {
@@ -134,7 +128,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the description
      *
      * @param string $description
-     * @return void
      */
     public function setDescription(string $description)
     {
@@ -155,7 +148,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the isProposal
      *
      * @param bool $isProposal
-     * @return void
      */
     public function setIsProposal(bool $isProposal)
     {
@@ -186,7 +178,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the onlyNextAutoUpdate
      *
      * @param bool $onlyNextAutoUpdate
-     * @return void
      */
     public function setOnlyNextAutoUpdate(bool $onlyNextAutoUpdate)
     {
@@ -217,7 +208,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the everyAutoUpdate
      *
      * @param bool $everyAutoUpdate
-     * @return void
      */
     public function setEveryAutoUpdate(bool $everyAutoUpdate)
     {
@@ -238,7 +228,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the isAutoUpdatePlanned
      *
      * @param bool $isAutoUpdatePlanned
-     * @return void
      */
     public function setIsAutoUpdatePlanned(bool $isAutoUpdatePlanned)
     {
@@ -259,7 +248,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Adds a Category
      *
      * @param \AUBA\CmsCensus\Domain\Model\Category $category
-     * @return void
      */
     public function addCategory(\AUBA\CmsCensus\Domain\Model\Category $category)
     {
@@ -270,7 +258,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Removes a Category
      *
      * @param \AUBA\CmsCensus\Domain\Model\Category $categoryToRemove The Category to be removed
-     * @return void
      */
     public function removeCategory(\AUBA\CmsCensus\Domain\Model\Category $categoryToRemove)
     {
@@ -291,7 +278,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the categories
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\AUBA\CmsCensus\Domain\Model\Category> $categories
-     * @return void
      */
     public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories)
     {
@@ -312,7 +298,6 @@ class Url extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the whatcmstype
      *
      * @param string $whatcmstype
-     * @return void
      */
     public function setWhatcmstype(string $whatcmstype)
     {

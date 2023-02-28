@@ -12,8 +12,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class for prepare the referenceUid mapping.
- *
- * @package AUBA\CmsCensus\Step
  */
 class CustomizeReferenceUIDMappingStep extends AbstractStep
 {
@@ -22,14 +20,14 @@ class CustomizeReferenceUIDMappingStep extends AbstractStep
      *
      * @var QueryBuilder
      */
-    protected $queryBuilder = null;
+    protected $queryBuilder;
 
     /**
      * urlRepository
      *
      * @var UrlRepository
      */
-    protected $urlRepository = null;
+    protected $urlRepository;
 
     /**
      * CustomizeSetupStep constructor.
@@ -50,7 +48,6 @@ class CustomizeReferenceUIDMappingStep extends AbstractStep
     /**
      * Performs the actual tasks of the step.
      *
-     * @return void
      * @throws \Doctrine\DBAL\Driver\Exception
      */
     public function run(): void
@@ -60,19 +57,17 @@ class CustomizeReferenceUIDMappingStep extends AbstractStep
 
     /**
      * Add requestUrl to rawData Array.
-     *
-     * @return void
      */
     protected function addRequestUrlToRawData(): void
     {
         $rawData = $this->getData()->getRawData();
-        $rawData['result'] = $rawData['result'] + array('requestUrl' => $this->getRequestUrl());
+        $rawData['result'] = $rawData['result'] + ['requestUrl' => $this->getRequestUrl()];
         $this->getData()->setRawData($rawData);
 
         // prepare the record to match name with requestUrl when record not empty
         $records = $this->getData()->getRecords();
         if (!empty($records)) {
-            $records[0] = $records[0] + array('name' => $this->getRequestUrl());
+            $records[0] = $records[0] + ['name' => $this->getRequestUrl()];
             $this->getData()->setRecords($records);
         } else {
             $this->removeUrlFromPlanning();
@@ -89,9 +84,10 @@ class CustomizeReferenceUIDMappingStep extends AbstractStep
         // query all entries where is_auto_update_planned = 1
         $query = $this->urlRepository->createQuery();
         $queryResult = $query->statement(
-            'SELECT name 
+            'SELECT name
                         FROM tx_cmscensus_domain_model_url
-                        WHERE is_auto_update_planned = ?', [1]
+                        WHERE is_auto_update_planned = ?',
+            [1]
         )->execute();
 
         return $queryResult[0]->getName();
@@ -107,9 +103,10 @@ class CustomizeReferenceUIDMappingStep extends AbstractStep
         // query all entries where is_auto_update_planned = 1
         $query = $this->urlRepository->createQuery();
         $queryResult = $query->statement(
-            'SELECT uid 
+            'SELECT uid
                         FROM tx_cmscensus_domain_model_url
-                        WHERE is_auto_update_planned = ?', [1]
+                        WHERE is_auto_update_planned = ?',
+            [1]
         )->execute();
 
         return $queryResult[0]->getUid();
@@ -117,8 +114,6 @@ class CustomizeReferenceUIDMappingStep extends AbstractStep
 
     /**
      * Remove the URL from planning, delete every auto update and set whatcmstype to unknown.
-     *
-     * @return void
      */
     protected function removeUrlFromPlanning(): void
     {
@@ -128,14 +123,13 @@ class CustomizeReferenceUIDMappingStep extends AbstractStep
         /** TODO: Refactoring
         $query = $this->urlRepository->createQuery();
         $queryResult = $query->statement(
-            'UPDATE tx_cmscensus_domain_model_url 
+            'UPDATE tx_cmscensus_domain_model_url
                         SET is_auto_update_planned = ?,
                         SET every_auto_update = ?,
                         SET whatcmstype = ?
                         WHERE uid = ?', [0,0,'CMS Not Detected', $requestUrlUid]
         )->execute();
         **/
-
         $this->queryBuilder
             ->update('tx_cmscensus_domain_model_url')
             ->where(

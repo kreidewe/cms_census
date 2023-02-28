@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AUBA\CmsCensus\Domain\Model;
 
-
 /**
  * This file is part of the "CMS Census Extension" Extension for TYPO3 CMS.
  *
@@ -19,7 +18,6 @@ namespace AUBA\CmsCensus\Domain\Model;
  */
 class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * name
      *
@@ -55,7 +53,6 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the name
      *
      * @param string $name
-     * @return void
      */
     public function setName(string $name)
     {
@@ -76,7 +73,6 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the description
      *
      * @param string $description
-     * @return void
      */
     public function setDescription(string $description)
     {
@@ -97,7 +93,6 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Sets the isProposal
      *
      * @param bool $isProposal
-     * @return void
      */
     public function setIsProposal(bool $isProposal)
     {
