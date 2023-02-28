@@ -1,0 +1,761 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\QueryInterface\\<AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\>\\:\\:statement\\(\\)\\.$#"
+			count: 4
+			path: Classes/CmsStatistics/CategoryUrls.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\CmsStatistics\\\\CategoryUrls\\:\\:countCmsOfCategoryUrls\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/CmsStatistics/CategoryUrls.php
+
+		-
+			message: "#^Variable \\$cmsUrlsPercentages might not be defined\\.$#"
+			count: 1
+			path: Classes/CmsStatistics/CategoryUrls.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Command\\\\UrlSchedulerRunCommand\\:\\:configure\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Command/UrlSchedulerRunCommand.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Command\\\\UrlSchedulerRunCommand\\:\\:injectUrlRepository\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Command/UrlSchedulerRunCommand.php
+
+		-
+			message: "#^Variable \\$uid might not be defined\\.$#"
+			count: 1
+			path: Classes/Command/UrlSchedulerRunCommand.php
+
+		-
+			message: "#^Parameter \\#1 \\$categoryUid of method AUBA\\\\CmsCensus\\\\CmsStatistics\\\\CategoryUrls\\:\\:countCmsOfCategoryUrls\\(\\) expects int, int\\|null given\\.$#"
+			count: 1
+			path: Classes/Controller/AjaxController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\ChartController\\:\\:injectCategoryRepository\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/ChartController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\ChartController\\:\\:injectUrlRepository\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/ChartController.php
+
+		-
+			message: "#^Variable \\$searchResult might not be defined\\.$#"
+			count: 2
+			path: Classes/Controller/ChartController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\ProposalController\\:\\:createCategoryAction\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\ProposalController\\:\\:createUrlAction\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\ProposalController\\:\\:injectCategoryRepository\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\ProposalController\\:\\:injectExtensionConfiguration\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\ProposalController\\:\\:injectUrlRepository\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Parameter \\#1 \\$messageBody of method TYPO3\\\\CMS\\\\Extbase\\\\Mvc\\\\Controller\\\\ActionController\\:\\:addFlashMessage\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Parameter \\#2 \\$messageTitle of method TYPO3\\\\CMS\\\\Extbase\\\\Mvc\\\\Controller\\\\ActionController\\:\\:addFlashMessage\\(\\) expects string, string\\|null given\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Controller\\\\ProposalController\\:\\:\\$extensionConfiguration type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Controller/ProposalController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:fetchChartData\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:fetchChartData\\(\\) has parameter \\$token with no type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:fetchChartDataById\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:fetchChartDataById\\(\\) has parameter \\$searchData with no type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:fetchChartDataById\\(\\) has parameter \\$token with no type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:injectExtensionConfiguration\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:injectUrlRepository\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:injectVersionsRepository\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:staticListById\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:staticListById\\(\\) has parameter \\$token with no type specified\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Parameter \\#2 \\$offset of function substr expects int, int\\<0, max\\>\\|false given\\.$#"
+			count: 2
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Parameter \\#3 \\$length of function substr expects int\\|null, int\\<0, max\\>\\|false given\\.$#"
+			count: 2
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Controller\\\\VersionController\\:\\:\\$extensionConfiguration type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Variable \\$response might not be defined\\.$#"
+			count: 3
+			path: Classes/Controller/VersionController.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\:\\:setDescription\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Category.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\:\\:setIsProposal\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Category.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\:\\:setName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Category.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:addCategory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:initializeObject\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:removeCategory\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setCategories\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setDescription\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setEveryAutoUpdate\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setIsAutoUpdatePlanned\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setIsProposal\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setOnlyNextAutoUpdate\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\:\\:setWhatcmstype\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Ternary operator condition is always true\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Url.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Versions\\:\\:setExpirey\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Versions.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Versions\\:\\:setId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Versions.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Versions\\:\\:setToken\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/Versions.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\:\\:setId\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/WhatCmsType.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\:\\:setLabel\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/WhatCmsType.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\:\\:setName\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Model/WhatCmsType.php
+
+		-
+			message: "#^Class AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\CategoryRepository extends generic class TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\Repository but does not specify its types\\: TEntityClass$#"
+			count: 1
+			path: Classes/Domain/Repository/CategoryRepository.php
+
+		-
+			message: "#^Cannot access offset 'uid' on array\\<string, mixed\\>\\|false\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Cannot call method fetchAssociative\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
+			count: 4
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Cannot call method fetchOne\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Class AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository extends generic class TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\Repository but does not specify its types\\: TEntityClass$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:fetchSearchResult\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:fetchSearchResult\\(\\) has parameter \\$formate with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:fetchSearchResult\\(\\) has parameter \\$searchData with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:fetchSearchResult\\(\\) has parameter \\$sort with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:fetchUrls\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:fetchUrls\\(\\) has parameter \\$argumentPerCron with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:fetchUrls\\(\\) has parameter \\$sysfolderID with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:updateFlag\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:updateFlag\\(\\) has parameter \\$sysfolderID with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:updateFlag\\(\\) has parameter \\$uid with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:updateStatus\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:updateStatus\\(\\) has parameter \\$status with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\UrlRepository\\:\\:updateStatus\\(\\) has parameter \\$uid with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Variable \\$queryBuilder might not be defined\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/UrlRepository.php
+
+		-
+			message: "#^Cannot call method fetch\\(\\) on Doctrine\\\\DBAL\\\\Result\\|int\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/VersionsRepository.php
+
+		-
+			message: "#^Class AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\VersionsRepository extends generic class TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\Repository but does not specify its types\\: TEntityClass$#"
+			count: 1
+			path: Classes/Domain/Repository/VersionsRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\VersionsRepository\\:\\:checkTokenExist\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/VersionsRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\VersionsRepository\\:\\:saveToken\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/VersionsRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\VersionsRepository\\:\\:saveToken\\(\\) has parameter \\$response with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/VersionsRepository.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\VersionsRepository\\:\\:saveToken\\(\\) has parameter \\$stat with no type specified\\.$#"
+			count: 1
+			path: Classes/Domain/Repository/VersionsRepository.php
+
+		-
+			message: "#^Class AUBA\\\\CmsCensus\\\\Domain\\\\Repository\\\\WhatCmsTypeRepository extends generic class TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\Repository but does not specify its types\\: TEntityClass$#"
+			count: 1
+			path: Classes/Domain/Repository/WhatCmsTypeRepository.php
+
+		-
+			message: "#^Call to an undefined method TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\QueryInterface\\<AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\>\\:\\:statement\\(\\)\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeFileImportSetupStep.php
+
+		-
+			message: "#^Cannot call method getColumnConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeFileImportSetupStep.php
+
+		-
+			message: "#^Cannot call method getGeneralConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeFileImportSetupStep.php
+
+		-
+			message: "#^Cannot call method setColumnConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeFileImportSetupStep.php
+
+		-
+			message: "#^Cannot call method setGeneralConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeFileImportSetupStep.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Step\\\\CustomizeFileImportSetupStep\\:\\:\\$extensionConfiguration type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeFileImportSetupStep.php
+
+		-
+			message: "#^Call to an undefined method TYPO3\\\\CMS\\\\Extbase\\\\Persistence\\\\QueryInterface\\<AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\>\\:\\:statement\\(\\)\\.$#"
+			count: 2
+			path: Classes/Step/CustomizeReferenceUIDMappingStep.php
+
+		-
+			message: "#^Cannot call method getRawData\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Data\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeReferenceUIDMappingStep.php
+
+		-
+			message: "#^Cannot call method getRecords\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Data\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeReferenceUIDMappingStep.php
+
+		-
+			message: "#^Cannot call method setRawData\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Data\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeReferenceUIDMappingStep.php
+
+		-
+			message: "#^Cannot call method setRecords\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Data\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeReferenceUIDMappingStep.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Step\\\\CustomizeReferenceUIDMappingStep\\:\\:\\$queryBuilder \\(Doctrine\\\\DBAL\\\\Query\\\\QueryBuilder\\) does not accept TYPO3\\\\CMS\\\\Core\\\\Database\\\\Query\\\\QueryBuilder\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeReferenceUIDMappingStep.php
+
+		-
+			message: "#^Cannot call method fetchFirstColumn\\(\\) on Doctrine\\\\DBAL\\\\ForwardCompatibility\\\\Result\\|int\\|string\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeSetupStep.php
+
+		-
+			message: "#^Cannot call method getGeneralConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeSetupStep.php
+
+		-
+			message: "#^Cannot call method setGeneralConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeSetupStep.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\Step\\\\CustomizeSetupStep\\:\\:getRequestUrl\\(\\) should return string but returns array\\<int, string\\>\\|string\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeSetupStep.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Step\\\\CustomizeSetupStep\\:\\:\\$extensionConfiguration type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeSetupStep.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Step\\\\CustomizeSetupStep\\:\\:\\$queryBuilder \\(Doctrine\\\\DBAL\\\\Query\\\\QueryBuilder\\) does not accept TYPO3\\\\CMS\\\\Core\\\\Database\\\\Query\\\\QueryBuilder\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeSetupStep.php
+
+		-
+			message: "#^Cannot call method getGeneralConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeStoragePIDStep.php
+
+		-
+			message: "#^Cannot call method setGeneralConfiguration\\(\\) on Cobweb\\\\ExternalImport\\\\Domain\\\\Model\\\\Configuration\\|null\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeStoragePIDStep.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Step\\\\CustomizeStoragePIDStep\\:\\:\\$extensionConfiguration type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/Step/CustomizeStoragePIDStep.php
+
+		-
+			message: "#^Call to an undefined method Doctrine\\\\DBAL\\\\Query\\\\QueryBuilder\\:\\:count\\(\\)\\.$#"
+			count: 1
+			path: Classes/Step/PlanningAutoUpdateStep.php
+
+		-
+			message: "#^Cannot call method fetch\\(\\) on Doctrine\\\\DBAL\\\\ForwardCompatibility\\\\Result\\|int\\|string\\.$#"
+			count: 1
+			path: Classes/Step/PlanningAutoUpdateStep.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Step\\\\PlanningAutoUpdateStep\\:\\:\\$queryBuilder \\(Doctrine\\\\DBAL\\\\Query\\\\QueryBuilder\\) does not accept TYPO3\\\\CMS\\\\Core\\\\Database\\\\Query\\\\QueryBuilder\\.$#"
+			count: 1
+			path: Classes/Step/PlanningAutoUpdateStep.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\UserFunction\\\\Transformation\\:\\:getCommaSeparatedValuesFromArray\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/UserFunction/Transformation.php
+
+		-
+			message: "#^Method AUBA\\\\CmsCensus\\\\UserFunction\\\\Transformation\\:\\:getCommaSeparatedValuesFromArray\\(\\) has parameter \\$record with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Classes/UserFunction/Transformation.php
+
+		-
+			message: "#^PHPDoc type array of property AUBA\\\\CmsCensus\\\\Tests\\\\Functional\\\\BasicTest\\:\\:\\$testExtensionsToLoad is not covariant with PHPDoc type array\\<non\\-empty\\-string\\> of overridden property TYPO3\\\\TestingFramework\\\\Core\\\\Functional\\\\FunctionalTestCase\\:\\:\\$testExtensionsToLoad\\.$#"
+			count: 1
+			path: Tests/Functional/BasicTest.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Tests\\\\Functional\\\\BasicTest\\:\\:\\$testExtensionsToLoad type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: Tests/Functional/BasicTest.php
+
+		-
+			message: "#^Call to method _set\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\CategoryController\\.$#"
+			count: 2
+			path: Tests/Unit/Controller/CategoryControllerTest.php
+
+		-
+			message: "#^Call to method listAction\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\CategoryController\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/CategoryControllerTest.php
+
+		-
+			message: "#^Class AUBA\\\\CmsCensus\\\\Controller\\\\CategoryController not found\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/CategoryControllerTest.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Tests\\\\Unit\\\\Controller\\\\CategoryControllerTest\\:\\:\\$subject has unknown class AUBA\\\\CmsCensus\\\\Controller\\\\CategoryController as its type\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/CategoryControllerTest.php
+
+		-
+			message: "#^Call to method _set\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController\\.$#"
+			count: 7
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Call to method createAction\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Call to method deleteAction\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Call to method editAction\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Call to method listAction\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Call to method showAction\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Call to method updateAction\\(\\) on an unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController not found\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Property AUBA\\\\CmsCensus\\\\Tests\\\\Unit\\\\Controller\\\\UrlControllerTest\\:\\:\\$subject has unknown class AUBA\\\\CmsCensus\\\\Controller\\\\UrlController as its type\\.$#"
+			count: 1
+			path: Tests/Unit/Controller/UrlControllerTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:_get\\(\\)\\.$#"
+			count: 3
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getDescription\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getIsProposal\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getName\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setDescription\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setIsProposal\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Category\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setName\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/CategoryTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:_get\\(\\)\\.$#"
+			count: 7
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:_set\\(\\)\\.$#"
+			count: 2
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:addCategory\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getCategorys\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getDescription\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getEveryAutoUpdate\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getIsProposal\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getName\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getOnlyNextAutoUpdate\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getWhatcmstype\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:removeCategory\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setCategorys\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setDescription\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setEveryAutoUpdate\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setIsProposal\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setName\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setOnlyNextAutoUpdate\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\Url\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setWhatcmstype\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/UrlTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:_get\\(\\)\\.$#"
+			count: 3
+			path: Tests/Unit/Domain/Model/WhatCmsTypeTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getId\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/WhatCmsTypeTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getLabel\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/WhatCmsTypeTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:getName\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/WhatCmsTypeTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setId\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/WhatCmsTypeTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setLabel\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/WhatCmsTypeTest.php
+
+		-
+			message: "#^Call to an undefined method AUBA\\\\CmsCensus\\\\Domain\\\\Model\\\\WhatCmsType\\|PHPUnit\\\\Framework\\\\MockObject\\\\MockObject\\|TYPO3\\\\TestingFramework\\\\Core\\\\AccessibleObjectInterface\\:\\:setName\\(\\)\\.$#"
+			count: 1
+			path: Tests/Unit/Domain/Model/WhatCmsTypeTest.php
